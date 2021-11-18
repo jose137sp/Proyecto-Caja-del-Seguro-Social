@@ -71,48 +71,26 @@
             <li class="breadcrumb-item">Programar Cita Médica</li>
             <li class="breadcrumb-item"><a href="cita-control.html">Cita de Control</a></li>
             <li class="breadcrumb-item"><a href="cita-control-verificacion.html">Datos de la cita anterior</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Datos de la cita</li>
+            <li class="breadcrumb-item"><a href="cita-control-datos.html">Datos de la nueva cita de control</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cita agendada</li>
         </ol>
     </nav>
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
-        <form action="cita-control-confirmacion.html">
-            <h3>Datos de la nueva cita de control</h3><br>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Correo electrónico</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="exampleInputEmail1">Número de celular</label>
-                    <input type="number" class="form-control" id="validationDefault01" placeholder="6xxxxxxx (Sin guiones)" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputState">Policlínica</label>
-                    <select id="inputState" class="form-control" required>
-                        <option selected>Policlínica especializada de la Caja del Seguro Social</option>
-                        <option>Policlínica de la CSS Dr. Carlos N. Brin</option>
-                        <option>Policlínica Dr. Manuel Ferrer Valdés</option>
-                        <option>Policlínica Alejandro De La Guardia</option>
-                        <option>Policlínica Dr. Generoso Guardia Caja De Seguro Social</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputState">Especialidad</label>
-                    <select id="inputState" class="form-control" required>
-                        <option selected >Neurología</option>
-                        <option>Cardiología</option>
-                        <option>Gineco-obstetricia</option>
-                        <option>Oftalmología</option>
-                        <option>Geriatría</option>
-                    </select>
-                </div>
-            </div>
-            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Enviar Solicitud</button>
-        </form>
+        <div class="jumbotron text-center">
+            <h4 class="display-4">Su cita ha sido agendada.</h4>
+            <p class="lead"><strong>Fecha: </strong>00/00/0000</p>
+            <p class="lead"><strong>Policlínica: </strong>xxxxxxxxx</p>
+            <p class="lead"><strong>Numéro de cita: </strong>xxxxxxxxx</p>
+            <hr>
+            <p>
+                ¿Tienes problemas? <a href="">Contáctanos</a>
+            </p>
+            <p class="lead">
+                <a class="btn" href="index.html" role="button" style="background-color: #005C8F; color: white;">Menú principal</a>
+            </p>
+        </div>
     </div>
 
 

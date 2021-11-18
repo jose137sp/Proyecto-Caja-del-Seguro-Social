@@ -69,50 +69,36 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
             <li class="breadcrumb-item">Programar Cita Médica</li>
-            <li class="breadcrumb-item"><a href="cita-control.html">Cita de Control</a></li>
-            <li class="breadcrumb-item"><a href="cita-control-verificacion.html">Datos de la cita anterior</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Datos de la cita</li>
+            <li class="breadcrumb-item active" aria-current="page">Cita de Control</li>
         </ol>
     </nav>
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
-        <form action="cita-control-confirmacion.html">
-            <h3>Datos de la nueva cita de control</h3><br>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputEmail4">Correo electrónico</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="exampleInputEmail1">Número de celular</label>
-                    <input type="number" class="form-control" id="validationDefault01" placeholder="6xxxxxxx (Sin guiones)" required>
-                </div>
+
+
+        <form>
+            <h3>Consultar estado de cita</h3><br>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Número de Cédula</label>
+                <input type="text" class="form-control" id="validationDefault01"
+                    placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
+                <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con
+                    nadie.</small>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputState">Policlínica</label>
-                    <select id="inputState" class="form-control" required>
-                        <option selected>Policlínica especializada de la Caja del Seguro Social</option>
-                        <option>Policlínica de la CSS Dr. Carlos N. Brin</option>
-                        <option>Policlínica Dr. Manuel Ferrer Valdés</option>
-                        <option>Policlínica Alejandro De La Guardia</option>
-                        <option>Policlínica Dr. Generoso Guardia Caja De Seguro Social</option>
-                    </select>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputState">Especialidad</label>
-                    <select id="inputState" class="form-control" required>
-                        <option selected >Neurología</option>
-                        <option>Cardiología</option>
-                        <option>Gineco-obstetricia</option>
-                        <option>Oftalmología</option>
-                        <option>Geriatría</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="validationDefault01" placeholder="" required>
             </div>
-            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Enviar Solicitud</button>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Número de cita</label>
+                <input type="number" class="form-control" id="validationDefault01"
+                    placeholder="Ingrese su número de cita" required>
+            </div>
+            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>
         </form>
+
+
     </div>
 
 

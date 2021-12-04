@@ -23,14 +23,15 @@
             -moz-appearance: textfield;
         }
     </style>
-    <title>Consultar estado de cita</title>
+    <title>Cancelar cita</title>
 </head>
 
 <body>
     <!-- //Navbar de logo -->
     <nav class="navbar navbar-dark" style="background-color: #005C8F;">
         <a class="navbar-brand" href="index.html">
-            <img src="Imagenes/logo.png" width="100%" height="50" alt="" class="img-thumbnail" style="background-color: #005C8F; border: #005C8F;">
+            <img src="Imagenes/logo.png" width="100%" height="50" alt="" class="img-thumbnail"
+                style="background-color: #005C8F; border: #005C8F;">
         </a>
     </nav>
     <!-- //Navbar de opciones -->
@@ -71,36 +72,26 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="medico-index.html">Inicio</a></li>
             <li class="breadcrumb-item">Citas programadas</li>
-            <li class="breadcrumb-item active" aria-current="page">Consultar estado de cita</li>
+            <li class="breadcrumb-item"><a href="medico-consultar-estado.html">Consultar estado de cita</a></li>
+            <li class="breadcrumb-item"><a href="medico-consultar-estado-confirmacion.html">Datos de la cita</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cancelar cita</li>
         </ol>
     </nav>
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
-
-
-        <form action="medico-consultar-estado-confirmacion.html">
-            <h3>Consultar estado de cita</h3><br>
-            <div class="form-group">
-                <label>Número de Cédula</label>
-                <input type="text" class="form-control" id="validationDefault01"
-                    placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
-                <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con
-                    nadie.</small>
-            </div>
-            <div class="form-group">
-                <label>Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="validationDefault01" placeholder="" required>
-            </div>
-            <div class="form-group">
-                <label>Número de cita</label>
-                <input type="number" class="form-control" id="validationDefault01"
-                    placeholder="Ingrese su número de cita" required>
-            </div>
-            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>
-        </form>
-
-
+        <div class="jumbotron text-center">
+            <h4 class="display-4">Reprogramar cita</h4>
+            <p class="lead"><strong>¿Está seguro que desea reprogramar la cita?</strong></p>
+            <p class="lead"><strong>Numéro de cita: </strong>xxxxxxxxx</p>
+            <p style="color: #ff7300;">⚠ Esta acción no se puede revertir</p>
+            <hr>
+            <a class="a" href="medico-consultar-estado-reprogramar-confirmado.html"
+                style="color: #eb0000; font-weight: bold;">Reprogramar</a>
+            <br><br>
+            <a class="btn" href="medico-consultar-estado-confirmacion.html" role="button"
+                style="background-color: #005C8F; color: white;">Retroceder</a>
+        </div>
     </div>
 
 

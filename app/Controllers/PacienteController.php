@@ -10,8 +10,8 @@ class PacienteController
         
     }
 
-    function index(){
-        
+    function registrar(){
+        require_once('Views/Cliente/registrar.php');
     }
 }
 ?>

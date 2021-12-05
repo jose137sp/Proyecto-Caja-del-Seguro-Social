@@ -76,22 +76,22 @@
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
-        <form action="cita-nueva-confirmacion.html">
+        <form action="cita-nueva-confirmacion.php" method "post">
             <h3>Datos de la cita nueva</h3><br>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Correo electrónico</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                    <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="Email" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Número de celular</label>
-                    <input type="number" class="form-control" id="validationDefault01" placeholder="6XXXXXXX (Sin guiones)" required>
+                    <input type="number" class="form-control" name="nCelular" id="nCelular" placeholder="6XXXXXXX (Sin guiones)" required>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>Policlínica</label>
-                    <select id="inputState" class="form-control" required>
+                    <select name="policlinica" id="policlinica" class="form-control" required>
                         <option selected>Policlínica especializada de la Caja del Seguro Social</option>
                         <option>Policlínica de la CSS Dr. Carlos N. Brin</option>
                         <option>Policlínica Dr. Manuel Ferrer Valdés</option>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>Especialidad</label>
-                    <select id="inputState" class="form-control" required>
+                    <select name="especialidad" id="especialidad" class="form-control" required>
                         <option selected >Neurología</option>
                         <option>Cardiología</option>
                         <option>Gineco-obstetricia</option>

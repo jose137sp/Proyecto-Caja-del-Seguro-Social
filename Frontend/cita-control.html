@@ -77,22 +77,22 @@
     <div class="container-fluid">
 
 
-        <form action="cita-control-verificacion.php" method=>
+        <form action="cita-control-verificacion.php" method="post">
             <h3>Solicitar Cita de Control</h3><br>
             <div class="form-group">
                 <label>Número de Cédula</label>
-                <input type="text" class="form-control" id="validationDefault01"
+                <input type="text" class="form-control" name="nCedula" id="nCedula"
                     placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
                 <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con
                     nadie.</small>
             </div>
             <div class="form-group">
                 <label>Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="validationDefault01" placeholder="" required>
+                <input type="date" class="form-control" name="dateBirth" id="dateBirth" placeholder="" required>
             </div>
             <div class="form-group">
                 <label>Número de cita</label>
-                <input type="number" class="form-control" id="validationDefault01"
+                <input type="number" class="form-control" name="nCita" id="nCita"
                     placeholder="Ingrese su número de cita" required>
             </div>
             <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>

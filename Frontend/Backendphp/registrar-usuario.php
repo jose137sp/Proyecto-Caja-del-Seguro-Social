@@ -7,10 +7,5 @@ $conn = new mysqli('localhost','root','','citas_medicas');
         die('conneción fallida: '.$conn->connect_error);
     }
     else{
-        $stmt = $conn -> prepare("");
-    }
-
-
-
-
+        $stmt = $conn -> prepare("");}
 ?>

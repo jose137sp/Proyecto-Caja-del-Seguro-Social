@@ -1,3 +1,9 @@
+<?php
+include "bdd.php";
+include "registro.php";
+insertarDatos();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,8 +22,7 @@
     <!-- //Navbar de logo -->
     <nav class="navbar navbar-dark" style="background-color: #005C8F;">
         <a class="navbar-brand" href="index.html">
-            <img src="Imagenes/logo.png" width="100%" height="50" alt="" class="img-thumbnail"
-                style="background-color: #005C8F; border: #005C8F;">
+            <img src="Imagenes/logo.png" width="100%" height="50" alt="" class="img-thumbnail" style="background-color: #005C8F; border: #005C8F;">
         </a>
     </nav>
     <!-- //Navbar de opciones -->
@@ -63,48 +68,49 @@
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
-        <h3>Registrar datos</h3><br>
-        <p>Ingresa tu información personal</p>
-        <form action="registrar-usuario.php" method="post">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Nombres</label>
-                    <input type="text" class="form-control" id="Nombres" name="Nombres"
-                        placeholder="Ingrese sus nombres" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Apellidos</label>
-                    <input type="text" class="form-control" id="Apellidos" name="Apellidos"
-                        placeholder="Ingrese sus apellidos" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Número de Cédula</label>
-                    <input type="text" class="form-control" id="nCedula" name="nCedula "
-                        placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Fecha de nacimiento</label>
-                    <input type="date" class="form-control" id="dateBirth" name="dateBirth" placeholder="" required>
-                </div>
-                <div class="form-group col-md-2">
-                    <label>Tipo de Sangre</label>
-                    <input type="text" class="form-control" id="Bloodtype" name="Bloodtype" placeholder="(Ejemplo: O+)"
-                        required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Dirección residencial</label>
-                <input type="text" class="form-control" id="inputAddress2" name="inputAddress2"
-                    placeholder="Calle, barrio, número de residencia" required>
-            </div>
-            <p style="color: #ff7300;">⚠ Verifica que tu información esté totalmente correcta</p>
 
-            <button type="submit" class="btn" name="submit"  style="background-color: #005C8F; color: white;">Finalizar
-                Registro</button>
-                <input type="submit">
-        </form>
+
+        <form action=login_insert.php method="post">
+            <h3>Registrar datos</h3><br>
+            <p>Ingresa tu información personal</p>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nombres">Nombres</label>
+                        <input type="text" class="form-control" id="nombres" name='nombres'
+                            placeholder="Ingrese sus nombres" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" name='apellidos'
+                            placeholder="Ingrese sus apellidos" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Número de Cédula</label>
+                        <input type="text" class="form-control" id="cedula" name='cedula'
+                            placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="fechanac" name='fechanac' placeholder="" required>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Tipo de Sangre</label>
+                        <input type="text" class="form-control" id="tipo_sangre" name='tipo_sangre'
+                            placeholder="(Ejemplo: O+)" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Dirección residencial</label>
+                    <input type="text" class="form-control" id="direccion" name='direccion'
+                        placeholder="Calle, barrio, número de residencia" required>
+                </div>
+                <p style="color: #ff7300;">⚠ Verifica que tu información esté totalmente correcta</p>
+                <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Finalizar Registro</button>
+            </form>
+
     </div>
 
 

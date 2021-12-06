@@ -12,9 +12,8 @@ $conn = new mysqli('localhost','root','','citas_medicas');
         die('conneción fallida: '.$conn->connect_error);
     }
     else{
-        $stmt = $conn -> prepare("insert into paciente:Nombres,Apellidos,nCedula,dateBirth,Bloodtype,inputAddress2)
-            values(?,?,?,?,?,?)");
-        $stmt -> bind_param("sssiss", $Nombres,$Apellidos,$nCedula,$dateBirth,$Bloodtype,$inputAddress2);
+        $stmt = $conn -> prepare("insert into Paciente(Nombres, Apellidos, nCedula, dateBirth, Bloodtype, inputAddress2) values(?, ?, ?, ?, ?, ?)");
+        $stmt -> bind_param("ssssss", $Nombres, $Apellidos, $nCedula, $dateBirth, $Bloodtype, $inputAddress2);
         $stmt -> execute(); 
         echo "Registro exitoso";
         $stmt -> close();

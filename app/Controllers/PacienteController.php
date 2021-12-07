@@ -10,6 +10,11 @@ class PacienteController
 
     }
 
+    function index()
+    {
+        require_once('Views/Layouts/bienvenida.php');
+    }
+
     function registrarse(){
         require_once('Views/Paciente/registrar-usuario.php');
     }
@@ -38,7 +43,7 @@ class PacienteController
             }else{
             $this->error();
             } 
-            
+
         }else{
             $this->error();
         }
@@ -50,6 +55,10 @@ class PacienteController
 
     public function error(){
         require_once('Views/Paciente/error.php');
+    }
+
+    public function ayuda(){
+        require_once('Views/Layouts/ayuda.php');
     }
 
 }

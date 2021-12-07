@@ -1,16 +1,13 @@
 <?php
+/*Por medio de este archivo se accede a la aplicación*/
+require_once("Db/db.php"); //Se incluye el archivo que contiene la conexión a la BD
 
-/*Este archivio le permite al apache acceder a la aplicación*/
-require_once("Db/db.php"); //Permite incluir el archivo que contiene la conexión a la BD
-
-if (isset($_GET['controller']) && isset($_GET['action'])) {  //Si existe un controlador (Controller) y una accion (action)
+if (isset($_GET['controller']) && isset($_GET['action'])) { // Si hay un controlador y acción (método) definido...
     $controller = $_GET['controller'];
     $action = $_GET['action'];
-} else { //Si no existe un controlador ni una accion (Sucede cuando se accede por primera vez al sistema)
-    $controller = 'Home';
+} else { //Si no se ha definido un controlador y acción (caso cuando se accede la primera vez en la sesión)
+    $controller = 'Paciente';
     $action = 'index';
 }
-
-require_once('Views/Layouts/layout.php'); //Layout.php es el template de la página, se utilizará para toda la aplicación
-
+require_once('./Views/Layouts/layout.php'); //Se incluye lo que hay en la vista layout.php 
 ?>

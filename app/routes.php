@@ -1,19 +1,18 @@
 <?php
 
 $controllers = array(
-    'Home' => ['index'],
-    'Paciente'=>['ayuda', 'cita-control', 'cita-nueva', 'consultar-estado', 'registrarse','guardar', 'confirmar', 'error'],
-    'Medico' => ['medico-login']
+    'Paciente'=>['index', 'ayuda', 'cita-control', 'cita-nueva', 'consultar-estado', 'registrarse','guardar', 'confirmar', 'error'],
+    'Medico' => ['medico-login, cita-control', 'cita-nueva', 'confirmar', 'error', 'itinerario']
 );
 
 if (array_key_exists($controller, $controllers)) {
-    if (in_array($action, $controller[$controller])){
+    if (in_array($action, $controllers[$controller])){
         call($controller, $action);
     } else {
-        call('Home', 'index');
+        call('Paciente', 'index');
     }
 } else {
-    call('Home', 'index');
+    call('Paciente', 'index');
 }
 
 function call($controller, $action)
@@ -21,9 +20,6 @@ function call($controller, $action)
     require_once('Controllers/' . $controller . 'Controller.php');
 
     switch ($controller) {
-        case 'Home':
-            $controller = new HomeController();
-            break;
         case 'Paciente':
             $controller = new PacienteController();
             break;

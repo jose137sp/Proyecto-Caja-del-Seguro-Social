@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Paciente/ayuda.php">Ayuda</a>
+                    <a class="nav-link" href="?controller=Paciente&action=ayuda">Ayuda</a>
                 </li>
             </ul>
         </div>

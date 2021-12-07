@@ -4,7 +4,7 @@ class Conexion
 {
     public static function conectar()
     {
-        $conexion = mysqli_connect('localhost', 'root', '', 'gestion_citas');
+        $conexion = new mysqli('localhost', 'root', '', 'gestion_citas');
         return $conexion;
     }
 }

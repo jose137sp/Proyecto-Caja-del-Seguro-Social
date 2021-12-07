@@ -1,7 +1,8 @@
 Create database CSS_Ing_web
 
-Create table Paciente (
-Cédula char (11) not null
+Create table 
+Paciente (
+Cedula char (11) not null
     Constraint Paciente_Cédula_pk primary key 
     Constraint Paciente_Cédula_ck check(Cédula like '[0][1-9][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'
                                             or Cédula like '[1][0-3][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'
@@ -36,7 +37,7 @@ Create table Medico (
 Ced_Médico char (11) not null
     Constraint Medico_Cédula_pk primary key
     Constraint Medico_Cédula_ck check(Ced_Médico like '[0][1-9][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'
-                                      or Ced_Médico like '[1][0-3][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'),
+                                    or Ced_Médico like '[1][0-3][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'),
 Nombre_Médico varchar (50) not null,
 Apellido_Médico varchar (50) not null,
 Especialidad varchar (25) not null,

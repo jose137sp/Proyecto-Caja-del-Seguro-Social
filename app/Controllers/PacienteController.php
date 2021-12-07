@@ -21,18 +21,24 @@ class PacienteController
         $data['FechaNac']=$_POST['FechaNac'];
         $data['Tipo_Sangre']=$_POST['Tipo_Sangre'];
         $data['Direccion']=$_POST['Direccion'];
+
         if(!empty($data['Nombres']) && !empty($data['Apellidos']) && !empty($Data['Cedula'])){
             $paciente= new PacienteModel();
             $existe_paciente = $paciente->verificarPaciente($data['Cedula']);
+
             if(!$existe_paciente){
+                
                 if($paciente->registrarPaciente($data)){
                     $this->confirmar();
+
                 }else{
                 $this->error();
             } 
+
             }else{
             $this->error();
             } 
+            
         }else{
             $this->error();
         }

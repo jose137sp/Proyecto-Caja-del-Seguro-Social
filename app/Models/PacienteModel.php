@@ -27,7 +27,7 @@ class PacienteModel
 
     public function verificarPaciente($cedula_paciente)
     {
-        $consulta = $this->db->query("select count(*) as contador from paciente where nCedula = '" .$cedula_paciente . "';");
+        $consulta = $this->db->query("select count(*) as contador from paciente where nCedula = '" . $cedula_paciente . "';");
         $cantidad_pacientes = $consulta->fetch_assoc();
         if ($cantidad_pacientes['contador'] > 0){
             return true;

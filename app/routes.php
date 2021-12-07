@@ -2,7 +2,7 @@
 
 $controllers = array(
     'Home' => ['index'],
-    'Paciente'=>['ayuda', 'cita-control', 'cita-nueva', 'consultar-estado', 'registrarse','guardar'],
+    'Paciente'=>['ayuda', 'cita-control', 'cita-nueva', 'consultar-estado', 'registrarse','guardar', 'confirmar', 'error'],
     'Medico' => ['medico-login']
 );
 

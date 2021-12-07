@@ -12,3 +12,4 @@ class HomeController
         require_once('Views/Home/index.php');
     }
 }
+?>

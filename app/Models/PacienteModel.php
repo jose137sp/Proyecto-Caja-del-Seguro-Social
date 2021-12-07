@@ -25,5 +25,27 @@ class PacienteModel
             return $pacientes;
         }
 
+    public function verificarPaciente($cedula_paciente)
+    {
+        $consulta = $this->db->query("select count(*) as contador from paciente where nCedula = '" .$cedula_paciente . "';");
+        $cantidad_pacientes = $consulta->fetch_assoc();
+        if ($cantidad_pacientes['contador'] > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function registrarPaciente($data)
+    {
+        $consulta = $this->db->query("insert into paciente (Nombres, Apellidos, nCedula, dateBirth, Bloodtype, inputAddress2)
+        values('" . $data['Nombres'] . "','" . $data['Apellidos'] . "','" . $data['Cedula'] . "','" . $data['Fechanac'] . "','" . $data['Tipo_Sangre'] . "','" . $data['Direccion'] . "');");
+        if ($consulta) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

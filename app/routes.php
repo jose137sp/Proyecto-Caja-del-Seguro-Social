@@ -2,16 +2,16 @@
 
 $controllers = array(
     'Home' => ['index'],
-    'Paciente'=>['ayuda', 'cita-control', 'cita-nueva', 'consultar-estado', 'registrarse'],
+    'Paciente'=>['ayuda', 'cita-control', 'cita-nueva', 'consultar-estado', 'registrarse','guardar'],
     'Medico' => ['medico-login']
 );
 
 if (array_key_exists($controller, $controllers)) {
     if (in_array($action, $controller[$controller])){
         call($controller, $action);
-    }  else {
+    } else {
         call('Home', 'index');
-        }
+    }
 } else {
     call('Home', 'index');
 }

@@ -57,6 +57,14 @@ class PacienteController
         require_once('Views/Paciente/error.php');
     }
 
+    public function cita_nueva(){
+        require_once('Views/Paciente/cita-nueva.php');
+    }
+
+    public function cita_control(){
+        require_once('Views/Paciente/cita-control.php');
+    }
+
     public function ayuda(){
         require_once('Views/Layouts/ayuda.php');
     }

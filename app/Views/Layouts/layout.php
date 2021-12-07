@@ -15,13 +15,6 @@
         <!-- //Navbar de opciones -->
     <?php require_once('navbar-paciente.php'); ?> 
 
-    <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Inicio</li>
-        </ol>
-    </nav>
-
     <!-- // El header y navbar se mantendrán estáticos, lo que cambiará será la información de la página, por lo que routes.php
             determinará dicha información -->
     <section>

@@ -3,7 +3,6 @@
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
 require_once('Models/PacienteModel.php');
-require_once('Db/db.php');
 
 class PacienteController
 {
@@ -22,31 +21,33 @@ class PacienteController
     }
 
     public function guardar(){
-        $data['nombres']=$_POST['nombres'];
-        $data['apellidos']=$_POST['apellidos'];
-        $data['cedula']=$_POST['cedula'];
-        $data['fechanac']=$_POST['fechanac'];
-        $data['tipo_sangre']=$_POST['tipo_sangre'];
-        $data['direccion']=$_POST['direccion'];
-
-        if(!empty($data['nombres']) && !empty($data['apellidos']) && !empty($Data['cedula'])){
+            $nombres=$_POST['nombres'];
+            $apellidos=$_POST['apellidos'];
+            $cedula=$_POST['cedula'];
+            $fechanac=$_POST['fechanac'];
+            $tipo_sangre=$_POST['tipo_sangre'];
+            $direccion=$_POST['direccion'];  
+            
+        if(!empty($nombres) && !empty($apellidos) && !empty($cedula)){
             $paciente= new PacienteModel();
-            $existe_paciente = $paciente->verificarPaciente($data['cedula']);
+            $existe_paciente = $paciente->verificarPaciente($cedula);
 
-            if(!$existe_paciente){
-                if($paciente->registrarPaciente($data)){
-                    $this->confirmar();
+                if(!$existe_paciente){
+
+                    if($paciente->registrarPaciente($nombres,$apellidos,$cedula,$fechanac,$tipo_sangre,$direccion)){
+                        $this->confirmar();
+
+                    }else{
+                    $this->error();
+                    } 
 
                 }else{
                 $this->error();
-            } 
+                } 
 
             }else{
-            $this->error();
-            } 
-
-        }else{
-            $this->error();
+            
+                $this->error();
         }
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 use PharIo\Manifest\Requirement;
+
 class PacienteModel
 {
     private $pacientes;
@@ -8,11 +9,11 @@ class PacienteModel
 
     public function __construct()
     {
-        $this->db = Conexion::conectar();
         $this->pacientes = array();
+        $this->db = Conexion::conectar();
     }
 
-    public function registrar()
+    public function listar()
         {
             $this->pacientes = $this->obtenerPacientes();
                         //Algoritmo para registrar un usuario
@@ -21,7 +22,7 @@ class PacienteModel
     public function obtenerPacientes()
         {
 
-            $consulta = $this->db->query("select * from paciente;");
+            $consulta = $this->db->query("SELECT * from paciente;");
             while($filas = $consulta -> fetch_assoc()) {
                 $pacientes[] = $filas;
             }
@@ -30,23 +31,24 @@ class PacienteModel
 
     public function verificarPaciente($cedula_paciente)
     {
-        $consulta = $this->db->query("select count(*) as contador from paciente where cedula = '" . $cedula_paciente . "';");
+        $consulta = $this->db->query("SELECT count(*) as contador from paciente where cedula = '" . $cedula_paciente . "';");
         $cantidad_pacientes = $consulta->fetch_assoc();
-        if ($cantidad_pacientes['contador'] > 0){
+        if ($cantidad_pacientes['contador'] > 0) {
             return true;
         } else {
             return false;
         }
     }
 
-    public function registrarPaciente($data)
+    public function registrarPaciente($nombres, $apellidos, $cedula, $fechanac, $tipo_sangre, $direccion)
     {
         $consulta = $this->db->query("INSERT INTO paciente (nombres, apellidos, cedula, fechanac, tipo_sangre, direccion)
-            values ('" . $data['nombres'] . "','" . $data['apellidos'] . "','" .$data['cedula'] . "','" . $data['fechanac'] . "','" . $data['tipo_sangre'] . "','" . $data['direccion'] . "');");
+            VALUES ('" . $nombres . "','" . $apellidos . "','" .$cedula . "','" . $fechanac . "','" . $tipo_sangre . "','" . $direccion . "');");
         if ($consulta) {
             return true;
         } else {
             return false;
         }
+            
     }
 }

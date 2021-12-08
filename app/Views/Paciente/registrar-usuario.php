@@ -12,45 +12,45 @@
     <!-- Contenido de la sección -->
     <div class="container-fluid">
 
-        <form action="?controller=Paciente&&action=guardar" method="POST">
+        <form action="?controller=Paciente&action=guardar" method="POST">
             <h3>Registrar datos</h3><br>
             <p>Ingresa tu información personal</p>
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="Nombres">Nombres</label>
+                        <label for="nombres">Nombres</label>
                         <input type="text" class="form-control" id="nombres" name="nombres"
                             placeholder="Ingrese sus nombres" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="Apellidos">Apellidos</label>
+                        <label for="apellidos">Apellidos</label>
                         <input type="text" class="form-control" id="apellidos" name="apellidos"
                             placeholder="Ingrese sus apellidos" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="Cedula">Número de Cédula</label>
+                        <label for="cedula">Número de Cédula</label>
                         <input type="text" class="form-control" id="cedula" name= "cedula"
                             placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for Fechanac>Fecha de nacimiento</label>
+                        <label for="fechanac">Fecha de nacimiento</label>
                         <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="" required>
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="Tipo_Sangre">Tipo de Sangre</label>
+                        <label for="tipo_sangre">Tipo de Sangre</label>
                         <input type="text" class="form-control" id="tipo_sangre" name="tipo_sangre"
                             placeholder="(Ejemplo: O+)" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="Direccion">Dirección residencial</label>
+                    <label for="direccion">Dirección residencial</label>
                     <input type="text" class="form-control" id="direccion" name="direccion"
                         placeholder="Calle, barrio, número de residencia" required>
                 </div>
                 <p style="color: #ff7300;">⚠ Verifica que tu información esté totalmente correcta</p>
-                <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Finalizar Registro</button>
+                <button type="submit" class="btn" name="submit" value="Insertar" style="background-color: #005C8F; color: white;">Finalizar Registro</button>
             </form>
 
     </div>

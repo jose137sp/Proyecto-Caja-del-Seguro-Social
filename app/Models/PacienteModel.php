@@ -65,6 +65,12 @@ class PacienteModel
             return false;
         }
     }
+
+    public function asignarCita($email, $telefono, $policlinica, $especialidad){
+
+
+
+    }
     
 
 

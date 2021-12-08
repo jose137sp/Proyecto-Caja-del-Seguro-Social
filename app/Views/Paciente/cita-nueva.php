@@ -26,15 +26,18 @@
                 <br>
                 <hr>
             </div>
+
             <div class="form-group">
                 <br>
                 <p style="font-weight: lighter;">Sí, ya he solicitado citas anteriormente</p>
+
                 <label>Número de Cédula</label>
                 <input type="text" class="form-control" id="cedula" name="cedula"
                     placeholder="Ingrese su número de Cédula (X-XXX-XXXX)">
                 <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con
                     nadie.</small>
             </div>
+            
             <div class="form-group">
                 <label>Fecha de nacimiento</label>
                 <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="" required>

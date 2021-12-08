@@ -50,6 +50,7 @@ class PacienteController
                 if(!$existe_paciente){
 
                     if($paciente->registrarPaciente($nombres,$apellidos,$cedula,$fechanac,$tipo_sangre,$direccion)){
+                        echo "paciente registrado correctamente";
                         $this->confirmar();
 
                     }else{
@@ -57,11 +58,12 @@ class PacienteController
                     } 
 
                 }else{
+                echo "El paciente ya existe";
                 $this->error();
                 } 
 
             }else{
-            
+                echo "Debe rellenar todos los campos";
                 $this->error();
         }
     }
@@ -93,7 +95,9 @@ class PacienteController
 
                 //Si el paciente existe redirigir a la pagina de programar cita, de lo contrario, error
                 if($existe_paciente){
-                    $this-> cita_nueva_datos();
+                    
+                    require_once('Views/Paciente/cita-nueva-datos.php');
+                    //$this-> cita_nueva_datos();
                 
                 }else{
                     $this->error();
@@ -103,12 +107,26 @@ class PacienteController
             $this->error();
         }
         } 
-    
-    public function cita_nueva_datos(){
 
-        require_once('Views/Paciente/cita-nueva-datos.php');
 
-    }
+    //Esta funcion registra los datos de la cita, con esos datos y PacienteModel, genera una fecha automática y número de cita.
+    /**public function cita_nueva_registrada(){
+
+        $email=$_POST['email'];
+        $telefono=$_POST['telefono'];
+        $policlinica=$_POST['policlinica'];
+        $especialidad=$_POST['especialidad'];
+
+        $cedula = $this->$cedula=$_POST['cedula'];
+
+        //Verificar si los campos no están vacíos
+        if(!empty($email) && !empty($telefono) && !empty($policlinica) && !empty($especialidad)){
+            $paciente= new PacienteModel();
+            $asignar_cita = $paciente->asignarCita($email, $telefono, $policlinica,$especialidad);
+
+
+        }
+    }**/
 
 
     public function cita_control(){

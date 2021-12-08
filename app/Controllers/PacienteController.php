@@ -2,6 +2,8 @@
 
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
+require_once('Models/PacienteModel.php');
+require_once('Db/db.php');
 
 class PacienteController
 {

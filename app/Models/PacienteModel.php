@@ -4,6 +4,7 @@ use PharIo\Manifest\Requirement;
 class PacienteModel
 {
     private $pacientes;
+    private $db;
 
     public function __construct()
     {
@@ -41,7 +42,7 @@ class PacienteModel
     public function registrarPaciente($data)
     {
         $consulta = $this->db->query("INSERT INTO paciente (nombres, apellidos, cedula, fechanac, tipo_sangre, direccion)
-            values ('" .$data['nombres'] . "','" .$data['apellidos'] . "','" .$data['cedula'] . "','" . $data['fechanac'] . "','" . $data['tipo_sangre'] . "','" . $data['direccion'] . "');");
+            values ('" . $data['nombres'] . "','" . $data['apellidos'] . "','" .$data['cedula'] . "','" . $data['fechanac'] . "','" . $data['tipo_sangre'] . "','" . $data['direccion'] . "');");
         if ($consulta) {
             return true;
         } else {

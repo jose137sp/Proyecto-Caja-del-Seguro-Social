@@ -6,7 +6,7 @@
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="?controller=Medico&action=index">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="?controller=Medico&&action=index">Inicio</a></li>
             <li class="breadcrumb-item">Programar Cita Médica</li>
             <li class="breadcrumb-item active" aria-current="page">Cita de Control</li>
         </ol>
@@ -15,7 +15,7 @@
     <!-- Contenido de la sección -->
     <div class="container-fluid">
 
-        <form action="?controller=Medico&action=datos_cita">
+        <form action="?controller=Medico&&action=datos_paciente">
             <h3>Solicitar Cita de Control</h3><br>
             <div class="form-group">
                 <label>Número de Cédula</label>

@@ -17,7 +17,7 @@
                     <a class="nav-link" href="">Consultar Itinerario</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="medico-ayuda.html">Ayuda</a>
+                    <a class="nav-link" href="?controller=Medico&&action=ayuda">Ayuda</a>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
             style="padding-left: 0; justify-content: left; white-space: nowrap;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item">
-                    <a class="nav-link" href="?controller=Medico&action=login">Cerrar sesión</a>
+                    <a class="nav-link" href="?controller=Medico&&action=login">Cerrar sesión</a>
                 </li>
             </ul>
         </div>

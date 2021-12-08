@@ -67,7 +67,7 @@
                 </div>
 
                 <!-- Login Form -->
-                <form action="?controller=Medico&action=index" method="POST">
+                <form action="?controller=Medico&&action=index" method="POST">
                     <input type="text" id="login" class="fadeIn second" name="cedula" placeholder="Cédula" required>
                     <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña" required>
                     <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Iniciar sesión</button>

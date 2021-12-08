@@ -23,10 +23,12 @@ class MedicoController
         require_once('Views/Medico/medico-cita-control.php');
     }
 
-    function datos_cita()
+    function datos_paciente()
     {
-        //Codigo para verificar existencia de paciente
-            //Si el paciente existe entonces    
-            
+        require_once('Views/Medico/medico-cita-control-busqueda.php');
+    }
+
+    public function datos_cita(){
+        require_once('Views/Medico/medico-cita-control-busqueda.php');
     }
 }

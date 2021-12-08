@@ -24,10 +24,10 @@ class PacienteController
     public function guardar(){
 
             //Variables para la protección contra errores
-            $nombre_error ="";
+            /**$nombre_error ="";**/
 
             //Se guardan los datos registrados en POST a las variables correspondientes
-            //$nombres=$_POST['nombres'];
+            $nombres=$_POST['nombres'];
             $apellidos=$_POST['apellidos'];
             $cedula=$_POST['cedula'];
             $fechanac=$_POST['fechanac'];
@@ -35,15 +35,15 @@ class PacienteController
             $direccion=$_POST['direccion'];  
         
         //Para cada variable, debe verificar que el campo no esté vacío y cumpla las reglas establecidas.
-        if(empty(trim($_POST['nombres']))){
+        /**if(empty(trim($_POST['nombres']))){
             $nombre_error = "El campo nombre no puede estar vacío."; 
         }    elseif(!preg_match('/^[a-zA-Z]+$/', trim($_POST["nombres"]))){
             $nombre_error = "El nombre solo admite letras.";
         } else{
             $nombres = trim($_POST["nombres"]);
-        }
+        }**/
 
-        if(empty($nombre_error) && !empty($apellidos) && !empty($cedula) && !empty($fechanac) && !empty($tipo_sangre) && !empty($direccion)){
+        if(!empty($nombres) && !empty($apellidos) && !empty($cedula) && !empty($fechanac) && !empty($tipo_sangre) && !empty($direccion)){
             $paciente= new PacienteModel();
             $existe_paciente = $paciente->verificarPaciente($cedula);
 
@@ -77,6 +77,39 @@ class PacienteController
     public function cita_nueva(){
         require_once('Views/Paciente/cita-nueva.php');
     }
+
+    //Esta funcion verifica que los datos del cliente exitan en la base de datos
+    //Una vez revise del POST la cedula y la fecha de nacimiento, verifica mediante verificarDatosPaciente su existencia.
+    public function cita_nueva_busqueda(){
+
+        //Variables obtenidas desde el post
+        $cedula=$_POST['cedula'];
+        $fechanac=$_POST['fechanac'];
+
+        //Si los campos no están vacíos, verifica su existencia
+        if(!empty($cedula) && !empty($fechanac)){
+            $paciente= new PacienteModel();
+            $existe_paciente = $paciente->verificarDatosPaciente($cedula, $fechanac);
+
+                //Si el paciente existe redirigir a la pagina de programar cita, de lo contrario, error
+                if($existe_paciente){
+                    $this-> cita_nueva_datos();
+                
+                }else{
+                    $this->error();
+                    } 
+
+        }else{
+            $this->error();
+        }
+        } 
+    
+    public function cita_nueva_datos(){
+
+        require_once('Views/Paciente/cita-nueva-datos.php');
+
+    }
+
 
     public function cita_control(){
         require_once('Views/Paciente/cita-control.php');

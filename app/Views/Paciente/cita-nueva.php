@@ -17,7 +17,7 @@
     <div class="container-fluid">
 
 
-        <form action="cita-nueva-datos.html">
+        <form action="?controller=Paciente&&action=cita_nueva_busqueda" method="POST">
             <h3>Solicitar Cita Nueva</h3><br>
             <p>¿Has solicitado una cita anteriormente?</p>
             <div>
@@ -27,18 +27,19 @@
                 <hr>
             </div>
             <div class="form-group">
+                <br>
                 <p style="font-weight: lighter;">Sí, ya he solicitado citas anteriormente</p>
                 <label>Número de Cédula</label>
-                <input type="text" class="form-control" id="validationDefault01"
-                    placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
+                <input type="text" class="form-control" id="cedula" name="cedula"
+                    placeholder="Ingrese su número de Cédula (X-XXX-XXXX)">
                 <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con
                     nadie.</small>
             </div>
             <div class="form-group">
                 <label>Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="validationDefault01" placeholder="" required>
+                <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="" required>
             </div>
-            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Solicitar</button>
+            <button type="submit" name="submit" value="solicitar" class="btn" style="background-color: #005C8F; color: white;">Solicitar</button>
         </form>
     </div>
 

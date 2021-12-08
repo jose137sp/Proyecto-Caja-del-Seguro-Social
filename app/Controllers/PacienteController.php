@@ -27,7 +27,7 @@ class PacienteController
             $nombre_error ="";
 
             //Se guardan los datos registrados en POST a las variables correspondientes
-            $nombres=$_POST['nombres'];
+            //$nombres=$_POST['nombres'];
             $apellidos=$_POST['apellidos'];
             $cedula=$_POST['cedula'];
             $fechanac=$_POST['fechanac'];
@@ -40,7 +40,7 @@ class PacienteController
         }    elseif(!preg_match('/^[a-zA-Z]+$/', trim($_POST["nombres"]))){
             $nombre_error = "El nombre solo admite letras.";
         } else{
-            $nombres = trim($_POST["nombre"]);
+            $nombres = trim($_POST["nombres"]);
         }
 
         if(empty($nombre_error) && !empty($apellidos) && !empty($cedula) && !empty($fechanac) && !empty($tipo_sangre) && !empty($direccion)){

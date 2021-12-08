@@ -20,15 +20,30 @@ class PacienteController
         require_once('Views/Paciente/registrar-usuario.php');
     }
 
+    //Esta función permite registrar un paciente siguiendo las reglas de modelo de negocio
     public function guardar(){
+
+            //Variables para la protección contra errores
+            $nombre_error ="";
+
+            //Se guardan los datos registrados en POST a las variables correspondientes
             $nombres=$_POST['nombres'];
             $apellidos=$_POST['apellidos'];
             $cedula=$_POST['cedula'];
             $fechanac=$_POST['fechanac'];
             $tipo_sangre=$_POST['tipo_sangre'];
             $direccion=$_POST['direccion'];  
-            
-        if(!empty($nombres) && !empty($apellidos) && !empty($cedula)){
+        
+        //Para cada variable, debe verificar que el campo no esté vacío y cumpla las reglas establecidas.
+        if(empty(trim($_POST['nombres']))){
+            $nombre_error = "El campo nombre no puede estar vacío."; 
+        }    elseif(!preg_match('/^[a-zA-Z]+$/', trim($_POST["nombres"]))){
+            $nombre_error = "El nombre solo admite letras.";
+        } else{
+            $nombres = trim($_POST["nombre"]);
+        }
+
+        if(empty($nombre_error) && !empty($apellidos) && !empty($cedula) && !empty($fechanac) && !empty($tipo_sangre) && !empty($direccion)){
             $paciente= new PacienteModel();
             $existe_paciente = $paciente->verificarPaciente($cedula);
 

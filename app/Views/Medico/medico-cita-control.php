@@ -15,7 +15,7 @@
     <!-- Contenido de la sección -->
     <div class="container-fluid">
 
-        <form action="?controller=Medico&&action=datos_paciente">
+        <form action="?controller=Medico&&action=datos_paciente" method="POST">
             <h3>Solicitar Cita de Control</h3><br>
             <div class="form-group">
                 <label>Número de Cédula</label>

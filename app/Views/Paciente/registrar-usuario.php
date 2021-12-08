@@ -19,34 +19,34 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="Nombres">Nombres</label>
-                        <input type="text" class="form-control" id="Nombres" name="Nombres"
+                        <input type="text" class="form-control" id="nombres" name="nombres"
                             placeholder="Ingrese sus nombres" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Apellidos">Apellidos</label>
-                        <input type="text" class="form-control" id="Apellidos" name="Apellidos"
+                        <input type="text" class="form-control" id="apellidos" name="apellidos"
                             placeholder="Ingrese sus apellidos" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="Cedula">Número de Cédula</label>
-                        <input type="text" class="form-control" id="Cedula" name= "Cedula"
+                        <input type="text" class="form-control" id="cedula" name= "cedula"
                             placeholder="Ingrese su número de Cédula (X-XXX-XXXX)" required>
                     </div>
                     <div class="form-group col-md-4">
                         <label for Fechanac>Fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="Fechanac" name="Fechanac" placeholder="" required>
+                        <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="" required>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="Tipo_Sangre">Tipo de Sangre</label>
-                        <input type="text" class="form-control" id="Tipo_Sangre" name="Tipo_Sangre"
+                        <input type="text" class="form-control" id="tipo_sangre" name="tipo_sangre"
                             placeholder="(Ejemplo: O+)" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="Direccion">Dirección residencial</label>
-                    <input type="text" class="form-control" id="Direccion" name="Direccion"
+                    <input type="text" class="form-control" id="direccion" name="direccion"
                         placeholder="Calle, barrio, número de residencia" required>
                 </div>
                 <p style="color: #ff7300;">⚠ Verifica que tu información esté totalmente correcta</p>

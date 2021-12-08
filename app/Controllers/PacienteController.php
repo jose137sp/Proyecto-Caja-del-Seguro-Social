@@ -20,19 +20,18 @@ class PacienteController
     }
 
     public function guardar(){
-        $data['Nombres']=$_POST['Nombres'];
-        $data['Apellidos']=$_POST['Apellidos'];
-        $data['Cedula']=$_POST['Cedula'];
-        $data['FechaNac']=$_POST['FechaNac'];
-        $data['Tipo_Sangre']=$_POST['Tipo_Sangre'];
-        $data['Direccion']=$_POST['Direccion'];
+        $data['nombres']=$_POST['nombres'];
+        $data['apellidos']=$_POST['apellidos'];
+        $data['cedula']=$_POST['cedula'];
+        $data['fechanac']=$_POST['fechanac'];
+        $data['tipo_sangre']=$_POST['tipo_sangre'];
+        $data['direccion']=$_POST['direccion'];
 
-        if(!empty($data['Nombres']) && !empty($data['Apellidos']) && !empty($Data['Cedula'])){
+        if(!empty($data['nombres']) && !empty($data['apellidos']) && !empty($Data['cedula'])){
             $paciente= new PacienteModel();
-            $existe_paciente = $paciente->verificarPaciente($data['Cedula']);
+            $existe_paciente = $paciente->verificarPaciente($data['cedula']);
 
             if(!$existe_paciente){
-                
                 if($paciente->registrarPaciente($data)){
                     $this->confirmar();
 

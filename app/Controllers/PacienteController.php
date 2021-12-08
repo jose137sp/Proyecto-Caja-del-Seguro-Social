@@ -65,6 +65,10 @@ class PacienteController
         require_once('Views/Paciente/cita-control.php');
     }
 
+    public function consultar_cita(){
+        require_once('Views/Paciente/consultar-estado.php');
+    }
+
     public function ayuda(){
         require_once('Views/Layouts/ayuda.php');
     }

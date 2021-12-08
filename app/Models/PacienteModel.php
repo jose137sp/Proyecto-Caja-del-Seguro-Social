@@ -1,12 +1,14 @@
 <?php
+
+use PharIo\Manifest\Requirement;
+
+require_once "./app/Db/db.php";
 class PacienteModel
 {
-    private $db;
     private $pacientes;
 
     public function __construct()
     {
-        $this->db = Conexion::conectar();
         $this->pacientes = array();
     }
 
@@ -18,7 +20,8 @@ class PacienteModel
 
     public function obtenerPacientes()
         {
-            $consulta = $this->db->query("select * from paciente;");
+
+            $consulta = $connect->query("select * from paciente;");
             while($filas = $consulta -> fetch_assoc()) {
                 $pacientes[] = $filas;
             }
@@ -38,14 +41,13 @@ class PacienteModel
 
     public function registrarPaciente($data)
     {
-        $consulta = $this->db->query("insert into paciente (Nombres, Apellidos, nCedula, dateBirth, Bloodtype, inputAddress2)
-        values('" . $data['Nombres'] . "','" . $data['Apellidos'] . "','" . $data['Cedula'] . "','" . $data['Fechanac'] . "','" . $data['Tipo_Sangre'] . "','" . $data['Direccion'] . "');");
+        $sql = "INSERT INTO paciente (nombres, apellidos, cedula, fechanac, tipo_sangre, direccion)
+            values ('" .$data['Nombres'] . "','" .$data['Apellidos'] . "','" .$data['Cedula'] . "','" . $data['Fechanac'] . "','" . $data['Tipo_Sangre'] . "','" . $data['Direccion'] . "');";
+        $consulta = $this->$connect->query($sql);
         if ($consulta) {
             return true;
         } else {
             return false;
         }
     }
-
-
 }

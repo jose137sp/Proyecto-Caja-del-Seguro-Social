@@ -1,8 +1,8 @@
 <?php
 
 $controllers = array(
-    'Paciente'=>['index', 'ayuda', 'cita_control', 'cita_nueva', 'consultar_estado', 'registrarse','guardar', 'confirmar', 'error'],
-    'Medico' => ['medico_login, cita_control', 'cita-nueva', 'confirmar', 'error', 'itinerario']
+    'Paciente'=>[ 'index', 'ayuda', 'cita_control', 'cita_nueva', 'consultar_cita', 'registrarse','guardar', 'confirmar', 'error'],
+    'Medico' => ['login', 'index', 'medico_login', 'cita_control', 'cita-nueva', 'confirmar', 'error', 'itinerario', 'datos_cita']
 );
 
 if (array_key_exists($controller, $controllers)) {

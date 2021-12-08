@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,13 +13,6 @@
 </head>
 
 <body>
-    <!-- //Navbar de logo -->
-    <nav class="navbar navbar-dark" style="background-color: #005C8F;">
-        <a class="navbar-brand" href="index.html">
-            <img src="Imagenes/logo.png" width="100%" height="50" alt="" class="img-thumbnail"
-                style="background-color: #005C8F; border: #005C8F;">
-        </a>
-    </nav>
     <!-- //Navbar de opciones -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; width: 100%;">
         <div class="navbar py-lg-0" id="navbarSupportedContent" style="padding-left: 0; width: 100%;">
@@ -77,10 +67,10 @@
                 </div>
 
                 <!-- Login Form -->
-                <form action="medico-index.html">
+                <form action="?controller=Medico&action=index" method="POST">
                     <input type="text" id="login" class="fadeIn second" name="cedula" placeholder="Cédula" required>
                     <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña" required>
-                    <input type="submit" class="fadeIn fourth" value="Iniciar sesión" style="background-color: #005C8F;">
+                    <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Iniciar sesión</button>
                 </form>
 
                 <!-- Remind Passowrd -->
@@ -93,13 +83,6 @@
             </div>
         </div>
     </section>
-
-    <!-- //Scripts Boostrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>

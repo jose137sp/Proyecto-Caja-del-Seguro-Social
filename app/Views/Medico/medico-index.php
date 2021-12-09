@@ -1,4 +1,4 @@
-<?php require_once('navbar-medico.php') ?>
+<?php require_once('navbar-medico.php')?> 
     
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">

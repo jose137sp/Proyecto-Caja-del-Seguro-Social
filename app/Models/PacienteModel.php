@@ -38,15 +38,12 @@ class PacienteModel
             
     }
 
-    public function verificarDatosPaciente($cedula_paciente,$fechanac)
+    public function verificarDatosPaciente($cedula,$fechanac)
     {
-        //Punteros que permiten verificar la existencia de información en la BDD
-        $consulta1 = $this->db->query("SELECT count(*) as contador1 from paciente where cedula= '" . $cedula_paciente . "';");
-        $cedula_existe = $consulta1->fetch_assoc();
-        $consulta2 = $this->db->query("SELECT count(*) as contador2 from paciente where fechanac= '" . $fechanac . "';");
-        $fechanac_existe = $consulta2->fetch_assoc();
-
-        if (($cedula_existe['contador1'] > 0) && ($fechanac_existe['contador2'] > 0)) {
+        $consulta = $this->db->query("SELECT count(*) as contador from paciente where cedula = '" . $cedula . "' and fechanac = '" . $fechanac . "';"  );
+        //Puntero que permiten verificar la existencia de información en la BDD
+        $existe = $consulta->fetch_assoc();
+        if (($existe['contador'] > 0)) {
             return true;
         } else {
             return false;

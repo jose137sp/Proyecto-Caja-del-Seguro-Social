@@ -20,7 +20,14 @@ class MedicoController
         $contraseña=$_POST['contraseña'];
         if(!empty($cedula) && !empty($contraseña)){
             $medico= new MedicoModel();
-            $existe_paciente = $medico->verificarlogin($cedula, $contraseña);
+            $existe_usuario = $medico->verificarlogin($cedula, $contraseña);
+
+            if($existe_usuario){
+                include ("Views/Medico/medico-index.php");
+            } else{
+                include ("Views/Medico/failed-login.php");
+            }
+
     }
 
     function cita_control()
@@ -68,7 +75,7 @@ class MedicoController
 
     }
 
-     function ayuda(){
+    function ayuda(){
         require_once('Views/Medico/medico-ayuda.php');
     }
 }

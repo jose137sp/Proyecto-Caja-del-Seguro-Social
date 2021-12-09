@@ -1,26 +1,26 @@
 Create database CSS_Ing_web
 
 Create table Paciente (
-Cedula char (11) not null
+cedula char (11) not null
     Constraint Paciente_Cédula_pk primary key 
     Constraint Paciente_Cédula_ck check(Cedula like '[0][1-9][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'
                                             or Cedula like '[1][0-3][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'
                                             or Cedula like '[E][-][0-9][-][0-9][0-9][0-9][0-9][0-9][0-9]'),
-Nombres varchar (50) not null,
-Apellidos varchar (50) not null, 
-Fecha_nacimiento date not null,
-tipo_de_sangre varchar (2) not null,
-Dirección varchar (100) not null
+nombres varchar (50) not null,
+apellidos varchar (50) not null, 
+fechanac date not null,
+tipo_sangre varchar (2) not null,
+direccion varchar (100) not null
 )
 go
 
 Create table citas (
-N_Cita int identity (1000,1) not null
+numero_cita int identity (1000,1) not null
     Constraint Citas_ncitas_pk primary key,
 fecha_cita date not null,
-Estado varchar (15) not null default 'Por asistir'
+estado varchar (15) not null default 'Por asistir'
     constraint Estado_cita_ck check (Estado like 'Por asistir' or Estado like 'Asitido'),
-Medico_ced char (11) not null
+cedula_medico char (11) not null
     constraint Medced_citas_fk foreign key (Medico_ced)
         references Medico (Ced_Médico),
 Especialidad int not null
@@ -34,58 +34,62 @@ Policlínica like 'Policlínica de la CSS Dr. Carlos N. Brin' or Policlínica li
 or Policlínica like 'Policlínica Dr. Generoso Guardia Caja De Seguro Social')
     constraint codp_citas_fk foreign key (Policlínica)
         references Policlínica(Cod_p)
+
+cedula_paciente foreign
 )
 go
 
 Create table Medico (
-Ced_Médico char (11) not null
-    Constraint Medico_Cédula_pk primary key
+id_medico int identity(1,1) not null
+    constraint id_medico_pk primary key,
+cedula_medico char (11) not null
     Constraint Medico_Cédula_ck check(Ced_Médico like '[0][1-9][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'
                                     or Ced_Médico like '[1][0-3][-][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]'),
-Nombre_Médico varchar (50) not null,
-Apellido_Médico varchar (50) not null,
-Especialidad varchar (25) not null,
-Contraseña nvarchar (25) not null
+nombre_medico varchar (50) not null,
+apellido_medico varchar (50) not null,
+especialidad_medico int not null,
+    constraint especialidad_medico_fk foreign key (especialidad_medico)
+        references Especialidad (cod_e)
 )
 go
 
 Create table Especialidad (
-Cod_e int identity (1,1) not null
+id_especialidad int identity (1,1) not null
 	constraint code_especialidad_pk primary key,
-Nombre_Especialidad varchar (25) not null,
-Medico_ced char (11) not null
-    constraint Medced_especialidad_fk foreign key (Medico_ced)
-        references Medico (Ced_Médico)
+nombre_especialidad varchar (25) not null,
+id_medico char (11) not null
+    constraint idmedico_especialidad_fk foreign key (id_medico)
+        references Medico (id_medico)
 )
 go
 
 Create table Policlínica (
-Cod_p  int identity(1,1) not null
+id_policlinica  int identity(1,1) not null
     Constraint codp_policlínica_pk primary key,
-Nombre_p varchar (75) not null,
-Dirección varchar (100) not null,
-Teléfono_p char (10) not null 
+nombre_poli varchar (75) not null,
+direccion_poli varchar (100) not null,
+telefono_poli char (10) not null 
 )
 go
 
 Create table Contacto (
-N_Cita int identity (1000,1) not null
+numero_cita int identity (1000,1) not null
     constraint ncita_citap_fk foreign key (N_Cita)
         references citas (N_Cita),
-Paciente_ced char (11) not null
+cedula_paciente char (11) not null
     constraint Pacienteced_citap_fk foreign key (Paciente_ced)
         references Paciente(Cedula),
-Teléfono varchar(10) not null,
-Correo_electronico nvarchar(80) not null,
+telefono varchar(10) not null,
+email nvarchar(80) not null,
 constraint ncitapaciente_citap_pk primary key (N_cita,Paciente_ced)
 )
 go
 
-Create table Cita_Medico (
-Medico_ced char (11) not null
+Create table registro_citas (
+cedula_medico char (11) not null
     constraint Medced_citam_fk foreign key (Medico_ced)
         references Medico (Ced_Médico),
-N_Cita int identity (1000,1) not null 
+numero_cita int identity (1000,1) not null 
     constraint ncita_citam_fk foreign key (N_Cita)
         references citas (N_Cita),
 

@@ -330,7 +330,7 @@
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
                     <p>
-                        ¿Tienes problemas? <a href="">Contáctanos</a>
+                        ¿Tienes problemas? <a href="?controller=Medico&&action=ayuda">Contáctanos</a>
                     </p>
                 </div>
 

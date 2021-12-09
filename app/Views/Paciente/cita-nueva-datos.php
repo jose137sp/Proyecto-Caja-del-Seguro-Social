@@ -27,7 +27,7 @@
                 <div class="form-group col-md-6">
                     <label>Policlínica</label>
                     <select id="policlinica" name="policlinica" class="form-control"  required>
-                        <option for="especializada" name="policlinica" value="1" >Policlínica especializada de la Caja del Seguro Social</option>
+                        <option for="Doctor_Arnulfo" name="policlinica" value="1" >Complejo Hospitalario Arnulfo Arias</option>
                         <option for="Carlos_Brin" name="policlinica" value="2" >Policlínica de la CSS Dr. Carlos N. Brin</option>
                         <option for="Manuel_Ferrer" name="policlinica" value="3" >Policlínica Dr. Manuel Ferrer Valdés</option>
                         <option for="Alejandro_Guardia" name="policlinica" value="4" >Policlínica Alejandro De La Guardia</option>

@@ -13,22 +13,6 @@ class PacienteModel
         $this->db = Conexion::conectar();
     }
 
-    public function listar()
-        {
-            $this->pacientes = $this->obtenerPacientes();
-                        //Algoritmo para registrar un usuario
-        }
-
-    public function obtenerPacientes()
-        {
-
-            $consulta = $this->db->query("SELECT * from paciente;");
-            while($filas = $consulta -> fetch_assoc()) {
-                $pacientes[] = $filas;
-            }
-            return $pacientes;
-        }
-
     public function verificarPaciente($cedula_paciente)
     {
         //Punteros que permiten verificar la existencia de información en la BDD
@@ -91,5 +75,19 @@ class PacienteModel
             return false;
         }
     }
+
+
+    //Esta función permite imprimir la información del paciente una vez se registra
+    public function info($cedula){
+            $this->pacientes = $this->obtenerPaciente($cedula);
+            return $this->pacientes;
+        }
+
     
+    public function obtenerPaciente($cedula)
+    {
+        $consulta = $this->db->query("SELECT * FROM paciente WHERE cedula = '" . $cedula . "';");
+        return $consulta;
+    }
 }
+    

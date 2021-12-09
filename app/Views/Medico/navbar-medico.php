@@ -1,4 +1,4 @@
-    <!-- //Navbar de opciones -->
+    <!-- //Navbar de opciones del médico-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; width: 100%;">
         <div class="navbar py-lg-0" id="navbarSupportedContent" style="padding-left: 0; width: 100%;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
@@ -25,7 +25,7 @@
             style="padding-left: 0; justify-content: left; white-space: nowrap;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item">
-                    <a class="nav-link" href="?controller=Medico&&action=login">Cerrar sesión</a>
+                    <a class="nav-link" href="?controller=Medico&&action=login" data-target=".navbar-collapse.show">Cerrar sesión</a>
                 </li>
             </ul>
         </div>

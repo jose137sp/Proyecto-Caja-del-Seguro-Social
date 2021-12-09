@@ -1,5 +1,5 @@
     <?php require_once('navbar-medico.php')?>    <!-- //Navbar de opciones -->
-
+    
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

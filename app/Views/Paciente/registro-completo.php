@@ -20,6 +20,18 @@
         <div class="jumbotron text-center">
             <h4 class="display-4">¡Datos registrados correctamente!</h4>
             <br>
+            <tbody>
+            <?php 
+            if ($datos){?>
+                <tr>
+                    <td>Nombres <?php echo $nombres?></td><br>
+                    <td>Apellidos <?php echo $apellidos ?></td><br>
+                    <td>Cedula <?php echo $cedula  ?></td><br>
+                    <td>Fecha de nacimiento <?php echo $fechanac ?></td><br>
+                </tr>
+            <?php }
+            ?>
+            </tbody>    
             <p class="lead">Ahora podrá solicitar una cita médica</p>
             <br>
             <p class="lead">

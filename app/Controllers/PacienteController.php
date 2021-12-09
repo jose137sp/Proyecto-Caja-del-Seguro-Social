@@ -53,8 +53,9 @@ class PacienteController
                 if(!$existe_paciente){
 
                     if($paciente->registrarPaciente($nombres,$apellidos,$cedula,$fechanac,$tipo_sangre,$direccion)){
-                        echo "paciente registrado correctamente";
-                        $this->confirmar();
+                        $paciente=new PacienteModel();
+                        $datos = $paciente->Info($cedula);
+                        require_once('Views/Paciente/registro-completo.php');
 
                     }else{
                     echo "Error en la conexión a la BDD";
@@ -113,7 +114,7 @@ class PacienteController
 
 
     //Esta funcion registra los datos de la cita, con esos datos y PacienteModel, genera una fecha automática y número de cita.
-    /**public function cita_nueva_registrada(){
+    /**public function cita_nueva_registrada($cedula){
 
         $email=$_POST['email'];
         $telefono=$_POST['telefono'];

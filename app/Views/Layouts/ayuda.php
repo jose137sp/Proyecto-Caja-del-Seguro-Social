@@ -16,14 +16,13 @@
                 <hr>
                 <h4 style="font-size: xx-large; font-weight: normal;">Preguntas frecuentes</h4>
                 <hr>
-                <p style="font-weight: bold; font-size: larger;">¿Cómo registrarse siendo un nuevo usuario en el sitio
-                    web de la Caja de Seguro Social?
+                <p style="font-weight: bold; font-size: larger;">Soy nuevo, ¿A dónde debo ir?
                 </p>
-                <p>Para poder registrarse como usuario nuevo en el sitio web de la Caja de Seguro Social, se debe
-                    acceder a “Programar cita médica” desde el menú superior y seleccionar la opción “Cita nueva”. Se
-                    debe seleccionar la opción “Soy un paciente nuevo”, para registrar los datos en el formulario de
-                    paciente nuevo. Una vez llenados los campos, se presiona la opción “Registrar” y estarás listo para
-                    seguir navegando como un usuario registrado.</p>
+                <p>Primero debes registrar tus datos en nuestro sitio web, para hacerlo, se debe
+                    acceder a “Programar cita médica” desde el menú superior y seleccionar la opción “Cita nueva”. Luego,
+                    podrá encontrar una opción “Soy un paciente nuevo”, seleccione dicha opción y se le mostrará un 
+                    formulario de inscripción, una vez llenados los campos, se presiona la opción “Registrar” y estarás 
+                    listo para solicitar una cita.</p>
                 <hr>
                 <p style="font-weight: bold; font-size: larger;">¿Cómo reservar una cita nueva?
                 </p>
@@ -44,19 +43,19 @@
         </div>
         <form>
             <p>¿Sigues con problemas? Completa el siguiente formulario y muy pronto te ayudaremos.</p>
-            <form>
+            <form action="?controller=Paciente&&action=servicio">
                 <div class="form-group">
                     <label>Nombre completo</label>
-                    <input type="text" class="form-control" id="validationDefault01"
+                    <input type="text" class="form-control" id="nombres" name="nombres"
                         placeholder="Ingresa tu nombre y apellido" required>
                 </div>
                 <div class="form-group">
                     <label>Correo eléctronico</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                    <input type="email" class="form-control" id="email" placeholder="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label>Mensaje o duda</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="3"
                         placeholder="150 caracteres max." required></textarea>
                 </div>
                 <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Enviar</button>

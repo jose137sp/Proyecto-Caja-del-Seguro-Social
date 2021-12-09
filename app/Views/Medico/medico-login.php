@@ -13,36 +13,6 @@
 </head>
 
 <body>
-    <!-- //Navbar de opciones -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; width: 100%;">
-        <div class="navbar py-lg-0" id="navbarSupportedContent" style="padding-left: 0; width: 100%;">
-            <ul class="navbar-nav mr-auto" style="width: 100%;">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Programar Cita Médica
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cita-nueva.html">Cita nueva</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="cita-control.html">Cita de control</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Citas Programadas
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="consultar-estado.html">Consultar estado de cita</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ayuda.html">Ayuda</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
@@ -321,8 +291,8 @@
 
                 <!-- Login Form -->
                 <form action="?controller=Medico&&action=index" method="POST">
-                    <input type="text" id="login" class="fadeIn second" name="cedula" placeholder="Cédula" required>
-                    <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña" required>
+                    <input type="text" id="login" class="fadeIn second" name="cedula" placeholder="cedula" required>
+                    <input type="password" id="password" class="fadeIn third" name="contraseña" placeholder="contraseña" required>
                     <br><br>
                     <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Iniciar sesión</button>
                     <br><br>

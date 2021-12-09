@@ -10,8 +10,6 @@ Nombres varchar (50) not null,
 Apellidos varchar (50) not null, 
 Fecha_nacimiento date not null,
 tipo_de_sangre varchar (2) not null,
-Teléfono varchar(10) not null,
-Correo_electronico nvarchar(80) not null,
 Dirección varchar (100) not null
 )
 go
@@ -19,8 +17,8 @@ go
 Create table citas (
 N_Cita int identity (1000,1) not null
     Constraint Citas_ncitas_pk primary key,
-fecha_cita datetime not null,
-Estado varchar (15) not null
+fecha_cita date not null,
+Estado varchar (15) not null default 'Por asistir'
     constraint Estado_cita_ck check (Estado like 'Por asistir' or Estado like 'Asitido'),
 Medico_ced char (11) not null
     constraint Medced_citas_fk foreign key (Medico_ced)
@@ -70,14 +68,15 @@ Teléfono_p char (10) not null
 )
 go
 
-Create table Cita_paciente (
+Create table Contacto (
 N_Cita int identity (1000,1) not null
     constraint ncita_citap_fk foreign key (N_Cita)
         references citas (N_Cita),
 Paciente_ced char (11) not null
     constraint Pacienteced_citap_fk foreign key (Paciente_ced)
-        references Paciente(Cedula)
-
+        references Paciente(Cedula),
+Teléfono varchar(10) not null,
+Correo_electronico nvarchar(80) not null,
 constraint ncitapaciente_citap_pk primary key (N_cita,Paciente_ced)
 )
 go

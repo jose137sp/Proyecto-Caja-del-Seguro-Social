@@ -43,6 +43,9 @@ class PacienteController
             $nombres = trim($_POST["nombres"]);
         }**/
 
+        
+            //Cuando se debe registrar un cliente, se debe verificar que no exista en la base de datos
+        
         if(!empty($nombres) && !empty($apellidos) && !empty($cedula) && !empty($fechanac) && !empty($tipo_sangre) && !empty($direccion)){
             $paciente= new PacienteModel();
             $existe_paciente = $paciente->verificarPaciente($cedula);
@@ -54,6 +57,7 @@ class PacienteController
                         $this->confirmar();
 
                     }else{
+                    echo "Error en la conexión a la BDD";
                     $this->error();
                     } 
 
@@ -97,7 +101,6 @@ class PacienteController
                 if($existe_paciente){
                     
                     require_once('Views/Paciente/cita-nueva-datos.php');
-                    //$this-> cita_nueva_datos();
                 
                 }else{
                     $this->error();
@@ -106,7 +109,7 @@ class PacienteController
         }else{
             $this->error();
         }
-        } 
+    } 
 
 
     //Esta funcion registra los datos de la cita, con esos datos y PacienteModel, genera una fecha automática y número de cita.
@@ -128,6 +131,24 @@ class PacienteController
         }
     }**/
 
+    //Esta función permite saber si existe una cita en la base de datos agregada al paciente
+    public function cita_consultada(){
+
+        $cedula=$_POST['cedula'];
+        $fechanac=$_POST['fechanac'];
+        $numero_cita=$_POST['numero_cita'];
+
+        //Si los campos no están vacíos, verifica su existencia
+        if(!empty($cedula) && !empty($fechanac) && !empty($numero_cita)){
+            $paciente= new PacienteModel();
+            $existe_cita = $paciente->verificarDatosCita($cedula, $fechanac, $numero_cita);
+
+            if($existe_cita){
+                
+            }
+        }
+
+    }
 
     public function cita_control(){
         require_once('Views/Paciente/cita-control.php');

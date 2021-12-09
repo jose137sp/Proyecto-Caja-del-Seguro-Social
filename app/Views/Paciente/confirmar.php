@@ -21,8 +21,6 @@
             <h4 class="display-4">¡Datos registrados correctamente!</h4>
             <br>
             <p class="lead">Ahora podrá solicitar una cita médica</p>
-            <p class="lead"><strong>Nombre: </strong>xxxxxxxxx</p>
-            <p class="lead"><strong>Cedula: </strong>xxxxxxxxx</p>
             <br>
             <p class="lead">
                 <a class="btn" href="?controller=Paciente&&action=cita_nueva" role="button" style="background-color: #005C8F; color: white;">Solicitar cita médica</a>

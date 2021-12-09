@@ -20,22 +20,26 @@ numero_cita int identity (1000,1) not null
 fecha_cita date not null,
 estado varchar (15) not null default 'Por asistir'
     constraint Estado_cita_ck check (Estado like 'Por asistir' or Estado like 'Asitido'),
-cedula_medico char (11) not null
-    constraint Medced_citas_fk foreign key (Medico_ced)
-        references Medico (Ced_Médico),
-Especialidad int not null
+id_medico int (11) not null
+    constraint citas_IDmedico_fk foreign key (id_medico)
+        references Medico (id_medico),
+id_especialidad int not null
     constraint Especialidad_citas_ck check (Especialidad like 'Neurología'or Especialidad like 'Cardiología' or Especialidad like 'Gineco-obstetricia' 
     or Especialidad like 'Oftalmología' or Especialidad like 'Geriatría')
-    constraint Especialidad_citas_fk foreign key (Especialidad)
-        references Especialidad (cod_e),
-Policlínica int not null
+    constraint Especialidad_citas_fk foreign key (id_especialidad)
+        references Especialidad (id_especialidad)
+        on update cascade,
+
+id_policlínica int not null
     constraint Policlínica_citas_ck check (Policlínica like 'Policlínica especializada de la Caja del Seguro Social' or 
 Policlínica like 'Policlínica de la CSS Dr. Carlos N. Brin' or Policlínica like 'Policlínica Dr. Manuel Ferrer Valdés' or Policlínica like 'Policlínica Alejandro De La Guardia' 
 or Policlínica like 'Policlínica Dr. Generoso Guardia Caja De Seguro Social')
-    constraint codp_citas_fk foreign key (Policlínica)
-        references Policlínica(Cod_p)
+    constraint citas_id_policlinica_fk foreign key (id_policlínica)
+        references policlínica(Cod_p)
 
-cedula_paciente foreign
+cedula_paciente varchar (11)
+    constraint citas_cedula_paciente_fk foreign key (cedula_paciente)
+        references paciente(cedula) 
 )
 go
 

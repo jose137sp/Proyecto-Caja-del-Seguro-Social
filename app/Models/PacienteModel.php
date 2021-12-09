@@ -52,26 +52,18 @@ class PacienteModel
             
     }
 
-    public function verificarDatosPaciente($cedula_paciente,$fechanac)
+    public function registrarCita($fechanac, $estado, $especialidad,$policlínica)
     {
-        $consulta1 = $this->db->query("SELECT count(*) as contador1 from paciente where cedula= '" . $cedula_paciente . "';");
-        $cedula_existe = $consulta1->fetch_assoc();
-        $consulta2 = $this->db->query("SELECT count(*) as contador2 from paciente where fechanac= '" . $fechanac . "';");
-        $fechanac_existe = $consulta2->fetch_assoc();
+        $consulta = $this->db->query("INSERT INTO citas(fecha_cita, Estado, Especialidad, Policlínica) 
+        VALUES ('" . $fechanac . "','" . $estado . "','" .$especialidad . "','" . $policlínica . "');");
 
-        if (($cedula_existe['contador1'] > 0) && ($fechanac_existe['contador2'] > 0)) {
+        if($consulta){
             return true;
         } else {
             return false;
         }
-    }
-
-    public function asignarCita($email, $telefono, $policlinica, $especialidad){
-
-
 
     }
-    
 
 
 }

@@ -315,7 +315,7 @@
 
                 <!-- Titulo -->
                 <div class="fadeIn first">
-                    <h4 style="padding-top: 20px;">Inicio de ssión para médicos</h4>
+                    <h4 style="padding-top: 20px;">Inicio de sesión para médicos</h4>
                     <hr>
                 </div>
 

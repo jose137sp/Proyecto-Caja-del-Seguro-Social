@@ -1,6 +1,7 @@
 <?php
 
 require_once('Models/MedicoModel.php');
+require_once('Models/PacienteModel.php');
 class MedicoController
 {
     function __construct()
@@ -13,9 +14,13 @@ class MedicoController
         require_once('Views/Medico/medico-login.php');
     }
 
-    function index()
+    public function verificar()
     {   
-        require_once('Views/Medico/medico-index.php');
+        $cedula=$_POST['cedula'];
+        $contraseña=$_POST['contraseña'];
+        if(!empty($cedula) && !empty($contraseña)){
+            $medico= new MedicoModel();
+            $existe_paciente = $medico->verificarlogin($cedula, $contraseña);
     }
 
     function cita_control()
@@ -49,11 +54,11 @@ class MedicoController
         require_once('Views/Medico/medico-cita-control-busqueda.php');
     }
 
-    public function datos_cita(){
+    function datos_cita(){
         require_once('Views/Medico/medico-cita-control-datos.php');
     }
 
-    public function cita_enviada(){
+    function cita_enviada(){
 
         /**
          * Codigo para verificar los datos de la cita
@@ -63,7 +68,8 @@ class MedicoController
 
     }
 
-    public function ayuda(){
+     function ayuda(){
         require_once('Views/Medico/medico-ayuda.php');
     }
+}
 }

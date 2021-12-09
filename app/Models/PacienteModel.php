@@ -83,7 +83,7 @@ class PacienteModel
             return $this->pacientes;
         }
 
-    
+    //Permite obtener la información de paciente desde la tabla paciente
     public function obtenerPaciente($cedula)
     {
         $consulta = $this->db->query("SELECT * FROM paciente WHERE cedula = '" . $cedula . "';");

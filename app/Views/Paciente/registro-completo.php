@@ -24,10 +24,10 @@
             <?php 
             if ($datos){?>
                 <tr>
-                    <td>Nombres <?php echo $nombres?></td><br>
-                    <td>Apellidos <?php echo $apellidos ?></td><br>
-                    <td>Cedula <?php echo $cedula  ?></td><br>
-                    <td>Fecha de nacimiento <?php echo $fechanac ?></td><br>
+                    <td>Nombres: <?php echo $nombres?></td><br>
+                    <td>Apellidos: <?php echo $apellidos ?></td><br>
+                    <td>Cedula: <?php echo $cedula  ?></td><br>
+                    <td>Fecha de nacimiento: <?php echo $fechanac ?></td><br>
                 </tr>
             <?php }
             ?>

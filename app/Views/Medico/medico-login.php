@@ -290,11 +290,11 @@
                 </div>
 
                 <!-- Login Form -->
-                <form action="?controller=Medico&&action=index" method="POST">
+                <form action="?controller=Medico&&action=verificar" method="POST">
                     <input type="text" id="login" class="fadeIn second" name="cedula" placeholder="cedula" required>
                     <input type="password" id="password" class="fadeIn third" name="contraseña" placeholder="contraseña" required>
                     <br><br>
-                    <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Iniciar sesión</button>
+                    <button type="submit" class="btn" value="Iniciar" style="background-color: #005C8F; color: white;">Iniciar sesión</button>
                     <br><br>
                 </form>
 

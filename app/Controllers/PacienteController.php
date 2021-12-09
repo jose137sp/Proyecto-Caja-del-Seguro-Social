@@ -3,6 +3,7 @@
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
 require_once('Models/PacienteModel.php');
+require_once('Models/MedicoModel.php');
 
 class PacienteController
 {
@@ -23,9 +24,6 @@ class PacienteController
     //Esta función permite registrar un paciente siguiendo las reglas de modelo de negocio
     public function guardar(){
 
-            //Variables para la protección contra errores
-            /**$nombre_error ="";**/
-
             //Se guardan los datos registrados en POST a las variables correspondientes
             $nombres=$_POST['nombres'];
             $apellidos=$_POST['apellidos'];
@@ -34,6 +32,9 @@ class PacienteController
             $tipo_sangre=$_POST['tipo_sangre'];
             $direccion=$_POST['direccion'];  
         
+            
+        //Variables para la protección contra errores
+        /**$nombre_error ="";**/
         //Para cada variable, debe verificar que el campo no esté vacío y cumpla las reglas establecidas.
         /**if(empty(trim($_POST['nombres']))){
             $nombre_error = "El campo nombre no puede estar vacío."; 

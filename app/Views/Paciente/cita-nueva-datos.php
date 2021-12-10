@@ -18,6 +18,17 @@
             <h3>Datos de la cita nueva</h3><br>
             <div class="form-row">
                 <div class="form-group col-md-6">
+                    <label>Número de Cédula</label>
+                    <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ingrese su número de Cédula (X-XXX-XXXX)">
+                    <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con nadie.</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
                     <label>Correo electrónico</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                 </div>

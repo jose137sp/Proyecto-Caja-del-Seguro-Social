@@ -50,7 +50,7 @@ class PacienteModel
         }
     }
 
-    public function asignarCita($email, $telefono, $policlinica, $especialidad, $fecha, $cedula){
+    public function asignarCita($email, $telefono, $policlinica, $especialidad){
 
 
 

@@ -11,7 +11,7 @@
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
-        <form action="?controller=Paciente&&action=cita_nueva_registrada" method="POST">
+        <form action="?controller=Paciente&&action=cita_nueva_solicitada" method="POST">
             <h3>Datos de la cita nueva</h3><br>
             <div class="form-row">
                 <div class="form-group col-md-6">

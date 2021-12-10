@@ -91,9 +91,10 @@ class PacienteController
     public function cita_nueva_busqueda(){
 
         //Variables obtenidas desde el post
-        $cedula=$_POST['cedula'];
-        $fechanac=$_POST['fechanac'];
-
+        session_start();
+        $cedula=$_SESSION['cedula'];
+        $fechanac=$_SESSION['fechanac'];
+        
         //Si los campos no están vacíos, verifica su existencia
         if(!empty($cedula) && !empty($fechanac)){
             $paciente= new PacienteModel();
@@ -103,7 +104,7 @@ class PacienteController
                 if($existe_paciente){
                     
                     require_once('Views/Paciente/cita-nueva-datos.php');
-                
+
                 }else{
                     $this->error();
                     } 
@@ -113,6 +114,27 @@ class PacienteController
         }
     } 
 
+    public function cita_nueva_solicitada(){
+
+        $email=$_POST['email'];
+        $telefono=$_POST['telefono'];
+        $policlinica=$_POST['policlinica'];
+        $especialidad=$_POST['especialidad'];
+        
+        if(!empty($email) && !empty($telefono) && !empty($policlinica) && !empty($especialidad)){
+            $paciente = new PacienteModel();
+            $cita_agendada = $paciente->asignarCita($email, $telefono, $policlinica, $especialidad);
+
+            if ($cita_agendada){
+
+                require_once("/Views/Paciente/cita-nueva-registrada.php");
+
+            } else{
+                echo "No se pudo registrar";
+            }
+        }
+
+    }
 
     //Esta funcion registra los datos de la cita, con esos datos y PacienteModel, genera una fecha automática y número de cita.
     /**public function cita_nueva_registrada($cedula){

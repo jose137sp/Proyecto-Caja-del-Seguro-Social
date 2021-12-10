@@ -109,7 +109,7 @@ class PacienteController
         } 
 
 
-    //Esta funcion registra los datos de la cita, con esos datos y PacienteModel, genera una fecha automática y número de cita.
+    //Esta funcion registra los datos de la cita, con esos datos y PacienteModel genera el número de cita.
     /**public function cita_nueva_registrada(){
 
         $email=$_POST['email'];
@@ -127,6 +127,22 @@ class PacienteController
 
         }
     }**/
+
+    public function regsistrarCita(){
+        $fechanac=$_POST['fechanac'];
+        $policlinica=$_POST['policlinica'];
+        $especialidad=$_POST['especialidad'];
+
+        if(cita_nueva_busqueda() === true){
+            $paciente = new PacienteModel();
+            $registrarcita = $paciente -> registrarCita($fechanac,'',$policlinica,$especialidad);
+        }
+        else {
+            $this->error(); 
+        }
+    }
+
+
 
 
     public function cita_control(){

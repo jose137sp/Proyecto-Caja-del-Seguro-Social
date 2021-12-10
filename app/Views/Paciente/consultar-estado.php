@@ -1,7 +1,6 @@
 <head>
     <title>Consultar estado de cita</title>
 </head>
-
     <!-- //Navbar de opciones de paciente-->
     <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
 

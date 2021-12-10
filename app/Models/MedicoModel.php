@@ -9,7 +9,7 @@ class MedicoModel
 
     public function __construct()
     {
-        $this->pacientes = array();
+        $this->medicos = array();
         $this->db = Conexion::conectar();
     }
 

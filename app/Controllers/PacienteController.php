@@ -7,11 +7,11 @@ require_once('Models/PacienteModel.php');
 require_once('Models/MedicoModel.php');
 
 class PacienteController
-{
+{   
 
     function __construct()
     {
-
+        
     }
 
     function index()
@@ -103,22 +103,18 @@ class PacienteController
 
                 //Si el paciente existe redirigir a la pagina de programar cita, de lo contrario, error
                 if($existe_paciente){
+                    $this->cedula = $cedula;
                     include ("Views/Paciente/cita-nueva-datos.php");
-
                 }else{
-                    $this->error();
+                    echo "No existe el paciente";
                     } 
 
         }else{
-            $this->error();
+            echo "campos vacíos";
         }
     } 
 
     public function cita_nueva_solicitada(){
-        
-        session_start();
-        $cedula = $_SESSION('cedula');
-        
         $email=$_POST['email'];
         $telefono=$_POST['telefono'];
         $policlinica=$_POST['policlinica'];
@@ -129,7 +125,7 @@ class PacienteController
             $cita_agendada = $paciente->asignarCita($cedula, $email, $telefono, $policlinica, $especialidad);
 
             if ($cita_agendada){
-                require_once("/Views/Paciente/cita-nueva-registrada.php");
+                echo "Cita agendada";
             } else{
                 echo "No se pudo registrar";
             }
@@ -139,7 +135,7 @@ class PacienteController
 
     //Esta función permite saber si existe una cita en la base de datos agregada al paciente
     public function cita_consultada(){
-
+        
         $cedula=$_POST['cedula'];
         $fechanac=$_POST['fechanac'];
         $numero_cita=$_POST['numero_cita'];

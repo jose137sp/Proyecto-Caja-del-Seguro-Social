@@ -1,5 +1,6 @@
-    <!-- //Navbar de opciones de paciente-->
-    <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
+<!-- //Navbar de opciones de paciente-->
+<?php require_once ('Views/Layouts/navbar-paciente.php') ?>
+    
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
@@ -29,21 +30,21 @@
                 <div class="form-group col-md-6">
                     <label>Policlínica</label>
                     <select id="policlinica" name="policlinica" class="form-control"  required>
-                        <option for="Doctor_Arnulfo" name="policlinica" value="1" >Complejo Hospitalario Arnulfo Arias</option>
-                        <option for="Carlos_Brin" name="policlinica" value="2" >Policlínica de la CSS Dr. Carlos N. Brin</option>
-                        <option for="Manuel_Ferrer" name="policlinica" value="3" >Policlínica Dr. Manuel Ferrer Valdés</option>
-                        <option for="Alejandro_Guardia" name="policlinica" value="4" >Policlínica Alejandro De La Guardia</option>
-                        <option for="Generoso_CSS" name="policlinica" value="5" >Policlínica Dr. Generoso Guardia Caja De Seguro Social</option>
+                        <option for="Doctor_Arnulfo" value="1" >Complejo Hospitalario Arnulfo Arias</option>
+                        <option for="Carlos_Brin"  value="2" >Policlínica de la CSS Dr. Carlos N. Brin</option>
+                        <option for="Manuel_Ferrer"  value="3" >Policlínica Dr. Manuel Ferrer Valdés</option>
+                        <option for="Alejandro_Guardia"  value="4" >Policlínica Alejandro De La Guardia</option>
+                        <option for="Generoso_CSS"  value="5" >Policlínica Dr. Generoso Guardia Caja De Seguro Social</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Especialidad</label>
                     <select id="especialidad" name="especialidad" class="form-control" required>
-                        <option for="especialidad" name="especialidad" value="1">Neurología</option>
-                        <option for="especialidad" name="especialidad" value="2">Cardiología</option>
-                        <option for="especialidad" name="especialidad" value="3">Gineco-obstetricia</option>
-                        <option for="especialidad" name="especialidad" value="4">Oftalmología</option>
-                        <option for="especialidad" name="especialidad" value="5">Geriatría</option>
+                        <option for="especialidad"  value="1">Neurología</option>
+                        <option for="especialidad"  value="2">Cardiología</option>
+                        <option for="especialidad"  value="3">Gineco-obstetricia</option>
+                        <option for="especialidad"  value="4">Oftalmología</option>
+                        <option for="especialidad"  value="5">Geriatría</option>
                     </select>
                 </div>
             </div>

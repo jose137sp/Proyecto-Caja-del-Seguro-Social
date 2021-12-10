@@ -2,7 +2,7 @@
 
 $controllers = array(
     'Paciente'=>[ 'index', 'ayuda', 'cita_control', 'cita_nueva', 'cita_consultada', 'cita_nueva_solicitada', 'cita_nueva_registrada','cita_nueva_busqueda', 'consultar_cita', 'registrarse', 'guardar', 'confirmar', 'error'],
-    'Medico'=>['login', 'verificar', 'index', 'medico_login', 'cita_control', 'confirmar', 'error', 'itinerario', 'datos_paciente', 'datos_cita', 'cita_enviada', 'ayuda', 'servicio']
+    'Medico'=>['login', 'verificar', 'index', 'medico_login', 'confirmar', 'error', 'itinerario', 'datos_paciente', 'datos_cita', 'cita_enviada', 'ayuda', 'servicio']
 );
 
 if (array_key_exists($controller, $controllers)) {

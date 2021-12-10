@@ -11,7 +11,7 @@
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
             <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="Imagenes/medicos-inicio.jpeg"
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://static.studyusa.com/article/aws_9CZM8SOpRgaVQQ1MnX8HxiuLzY8AOMoD_sm_2x.jpg"
                         alt="..." /></div>
                 <div class="col-md-6">
                     <h1 class="display-4 fw-bolder">Sitio para médicos.</h1>

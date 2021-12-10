@@ -50,10 +50,14 @@ class PacienteModel
         }
     }
 
-    public function asignarCita($email, $telefono, $policlinica, $especialidad){
-
-
-
+    public function asignarCita($cedula, $email, $telefono, $policlinica, $especialidad){
+        $consulta = $this->db->query("INSERT INTO prueba (cedula, email, telefono, policlinica, especialidad)
+            VALUES ('" . $cedula . "','" . $email . "','" .$telefono . "','" . $policlinica . "','" . $especialidad . "');");
+        if ($consulta){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     public function verificarDatosCita($cedula, $fechanac, $numero_cita){

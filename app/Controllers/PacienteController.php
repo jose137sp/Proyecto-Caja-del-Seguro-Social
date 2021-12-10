@@ -1,5 +1,6 @@
 <?php
 
+
 use PhpParser\Builder\Function_;
 use PhpParser\Node\Expr\FuncCall;
 require_once('Models/PacienteModel.php');
@@ -7,6 +8,7 @@ require_once('Models/MedicoModel.php');
 
 class PacienteController
 {
+
     function __construct()
     {
 
@@ -89,11 +91,10 @@ class PacienteController
     //Esta funcion verifica que los datos del cliente exitan en la base de datos
     //Una vez revise del POST la cedula y la fecha de nacimiento, verifica mediante verificarDatosPaciente su existencia.
     public function cita_nueva_busqueda(){
-
         //Variables obtenidas desde el post
-        session_start();
-        $cedula=$_SESSION['cedula'];
-        $fechanac=$_SESSION['fechanac'];
+        
+        $cedula=$_POST['cedula'];
+        $fechanac=$_POST['fechanac'];
         
         //Si los campos no están vacíos, verifica su existencia
         if(!empty($cedula) && !empty($fechanac)){
@@ -102,8 +103,7 @@ class PacienteController
 
                 //Si el paciente existe redirigir a la pagina de programar cita, de lo contrario, error
                 if($existe_paciente){
-                    
-                    require_once('Views/Paciente/cita-nueva-datos.php');
+                    include ("Views/Paciente/cita-nueva-datos.php");
 
                 }else{
                     $this->error();
@@ -115,7 +115,10 @@ class PacienteController
     } 
 
     public function cita_nueva_solicitada(){
-
+        
+        session_start();
+        $cedula = $_SESSION('cedula');
+        
         $email=$_POST['email'];
         $telefono=$_POST['telefono'];
         $policlinica=$_POST['policlinica'];
@@ -123,37 +126,16 @@ class PacienteController
         
         if(!empty($email) && !empty($telefono) && !empty($policlinica) && !empty($especialidad)){
             $paciente = new PacienteModel();
-            $cita_agendada = $paciente->asignarCita($email, $telefono, $policlinica, $especialidad);
+            $cita_agendada = $paciente->asignarCita($cedula, $email, $telefono, $policlinica, $especialidad);
 
             if ($cita_agendada){
-
                 require_once("/Views/Paciente/cita-nueva-registrada.php");
-
             } else{
                 echo "No se pudo registrar";
             }
         }
 
     }
-
-    //Esta funcion registra los datos de la cita, con esos datos y PacienteModel, genera una fecha automática y número de cita.
-    /**public function cita_nueva_registrada($cedula){
-
-        $email=$_POST['email'];
-        $telefono=$_POST['telefono'];
-        $policlinica=$_POST['policlinica'];
-        $especialidad=$_POST['especialidad'];
-
-        $cedula = $this->$cedula=$_POST['cedula'];
-
-        //Verificar si los campos no están vacíos
-        if(!empty($email) && !empty($telefono) && !empty($policlinica) && !empty($especialidad)){
-            $paciente= new PacienteModel();
-            $asignar_cita = $paciente->asignarCita($email, $telefono, $policlinica,$especialidad);
-
-
-        }
-    }**/
 
     //Esta función permite saber si existe una cita en la base de datos agregada al paciente
     public function cita_consultada(){

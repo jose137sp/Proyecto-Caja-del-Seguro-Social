@@ -29,7 +29,6 @@ id_especialidad int not null
     constraint Especialidad_citas_fk foreign key (id_especialidad)
         references Especialidad (id_especialidad)
         on update cascade,
-
 id_policlínica int not null
     constraint Policlínica_citas_ck check (Policlínica like 'Policlínica especializada de la Caja del Seguro Social' or 
 Policlínica like 'Policlínica de la CSS Dr. Carlos N. Brin' or Policlínica like 'Policlínica Dr. Manuel Ferrer Valdés' or Policlínica like 'Policlínica Alejandro De La Guardia' 
@@ -38,7 +37,7 @@ or Policlínica like 'Policlínica Dr. Generoso Guardia Caja De Seguro Social')
         references policlínica(Cod_p)
 
 cedula_paciente varchar (11)
-    constraint citas_cedula_paciente_fk foreign key (cedula_paciente)
+    constraint citas_cedulapaciente_fk foreign key (cedula_paciente)
         references paciente(cedula) 
 )
 go
@@ -62,7 +61,7 @@ id_especialidad int identity (1,1) not null
 	constraint code_especialidad_pk primary key,
 nombre_especialidad varchar (25) not null,
 id_medico char (11) not null
-    constraint idmedico_especialidad_fk foreign key (id_medico)
+    constraint especialidad_IDmedico_fl foreign key (id_medico)
         references Medico (id_medico)
 )
 go
@@ -78,11 +77,11 @@ go
 
 Create table Contacto (
 numero_cita int identity (1000,1) not null
-    constraint ncita_citap_fk foreign key (N_Cita)
+    constraint contacto_numerocita_fk foreign key (N_Cita)
         references citas (N_Cita),
 cedula_paciente char (11) not null
-    constraint Pacienteced_citap_fk foreign key (Paciente_ced)
-        references Paciente(Cedula),
+    constraint contacto_cedulapaciente_fk foreign key (cedula_paciente)
+        references paciente(Cedula),
 telefono varchar(10) not null,
 email nvarchar(80) not null,
 constraint ncitapaciente_citap_pk primary key (N_cita,Paciente_ced)
@@ -96,7 +95,7 @@ cedula_medico char (11) not null
 numero_cita int identity (1000,1) not null 
     constraint ncita_citam_fk foreign key (N_Cita)
         references citas (N_Cita),
-
+fecha_cita
 constraint ncitamedico_citap_pk primary key (N_cita,Medico_ced)
 )
 go

@@ -19,36 +19,56 @@
     </nav>
 
     <!-- Contenido de la sección -->
-    <div class="container-fluid">
 
-
-        <form action="?controller=Paciente&&action=cita_nueva_busqueda" method="POST">
-            <h3>Solicitar Cita Nueva</h3><br>
-            <p>¿Has solicitado una cita anteriormente?</p>
-            <div>
-                <a class="a" href="?controller=Paciente&action=registrarse" style="color: #005C8F; font-weight: bold;">No, registrar
-                    datos por primera vez</a>
-                <br>
-                <hr>
-            </div>
-
-            <div class="form-group">
-                <br>
-                <p style="font-weight: lighter;">Sí, ya he solicitado citas anteriormente</p>
-
-                <label>Número de Cédula</label>
-                <input type="text" class="form-control" id="cedula" name="cedula"
-                    placeholder="Ingrese su número de Cédula (X-XXX-XXXX)">
-                <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con
-                    nadie.</small>
-            </div>
-            
-            <div class="form-group">
-                <label>Fecha de nacimiento</label>
-                <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="" required>
-            </div>
-            <button type="submit" name="submit" value="solicitar" class="btn" style="background-color: #005C8F; color: white;">Solicitar</button>
-        </form>
+    <!-- Formulario cita nueva -->
+        <div class="container-fluid">
+            <form action="?controller=Paciente&&action=cita_nueva_solicitada" method="POST">
+                <p style="font-weight: lighter;">Datos de solicitud</p>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Número de Cédula</label>
+                        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ingrese su número de Cédula (X-XXX-XXXX)">
+                        <small id="emailHelp" class="form-text text-muted">Esta información no será compartida con nadie.</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="fechanac" name="fechanac" placeholder="" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Número de celular</label>
+                        <input type="number" class="form-control" id="telefono" name="telefono" placeholder="6XXXXXXX (Sin guiones)" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Policlínica</label>
+                        <select id="policlinica" name="policlinica" class="form-control"  required>
+                            <option for="Doctor_Arnulfo" value="1" >Complejo Hospitalario Arnulfo Arias</option>
+                            <option for="Carlos_Brin"  value="2" >Policlínica de la CSS Dr. Carlos N. Brin</option>
+                            <option for="Manuel_Ferrer"  value="3" >Policlínica Dr. Manuel Ferrer Valdés</option>
+                            <option for="Alejandro_Guardia"  value="4" >Policlínica Alejandro De La Guardia</option>
+                            <option for="Generoso_CSS"  value="5" >Policlínica Dr. Generoso Guardia Caja De Seguro Social</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Especialidad</label>
+                        <select id="especialidad" name="especialidad" class="form-control" required>
+                            <option for="especialidad"  value="1">Neurología</option>
+                            <option for="especialidad"  value="2">Cardiología</option>
+                            <option for="especialidad"  value="3">Gineco-obstetricia</option>
+                            <option for="especialidad"  value="4">Oftalmología</option>
+                            <option for="especialidad"  value="5">Geriatría</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" name="submit" value="enviar" class="btn" style="background-color: #005C8F; color: white;">Enviar Solicitud</button>
+            </form>
+        </div>
     </div>
-
 </body>

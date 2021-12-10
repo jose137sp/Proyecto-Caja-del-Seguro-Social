@@ -90,11 +90,15 @@ class PacienteController
 
     //Esta funcion verifica que los datos del cliente exitan en la base de datos
     //Una vez revise del POST la cedula y la fecha de nacimiento, verifica mediante verificarDatosPaciente su existencia.
-    public function cita_nueva_busqueda(){
+    public function cita_nueva_solicitada(){
         //Variables obtenidas desde el post
         
         $cedula=$_POST['cedula'];
         $fechanac=$_POST['fechanac'];
+        $email=$_POST['email'];
+        $telefono=$_POST['telefono'];
+        $policlinica=$_POST['policlinica'];
+        $especialidad=$_POST['especialidad'];
         
         //Si los campos no están vacíos, verifica su existencia
         if(!empty($cedula) && !empty($fechanac)){
@@ -103,8 +107,16 @@ class PacienteController
 
                 //Si el paciente existe redirigir a la pagina de programar cita, de lo contrario, error
                 if($existe_paciente){
-                    $this->cedula = $cedula;
-                    include ("Views/Paciente/cita-nueva-datos.php");
+                    $paciente = new PacienteModel();
+                    $cita_agendada = $paciente -> asignarCita($cedula, $email, $telefono, $policlinica, $especialidad);
+
+                    if($cita_agendada){
+                        echo "registrada";
+
+                    }  else{
+                        echo "No registrada";
+                    }
+
                 }else{
                     echo "No existe el paciente";
                     } 
@@ -113,25 +125,6 @@ class PacienteController
             echo "campos vacíos";
         }
     } 
-
-    public function cita_nueva_solicitada(){
-        $email=$_POST['email'];
-        $telefono=$_POST['telefono'];
-        $policlinica=$_POST['policlinica'];
-        $especialidad=$_POST['especialidad'];
-        
-        if(!empty($email) && !empty($telefono) && !empty($policlinica) && !empty($especialidad)){
-            $paciente = new PacienteModel();
-            $cita_agendada = $paciente->asignarCita($cedula, $email, $telefono, $policlinica, $especialidad);
-
-            if ($cita_agendada){
-                echo "Cita agendada";
-            } else{
-                echo "No se pudo registrar";
-            }
-        }
-
-    }
 
     //Esta función permite saber si existe una cita en la base de datos agregada al paciente
     public function cita_consultada(){

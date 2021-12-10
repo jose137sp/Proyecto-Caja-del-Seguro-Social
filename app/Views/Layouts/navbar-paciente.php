@@ -31,6 +31,14 @@
             style="padding-left: 0; justify-content: left; white-space: nowrap;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item">
+                    <a class="nav-link" href="?controller=Paciente&action=index">Sitio para pacientes</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar py-lg-0" id="navbarSupportedContent"
+            style="padding-left: 0; justify-content: left; white-space: nowrap;">
+            <ul class="navbar-nav mr-auto" style="width: 100%;">
+                <li class="nav-item">
                     <a class="nav-link" href="?controller=Medico&action=login">Sitio para médicos</a>
                 </li>
             </ul>

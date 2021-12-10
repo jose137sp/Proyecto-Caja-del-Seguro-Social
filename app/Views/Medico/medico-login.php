@@ -12,6 +12,9 @@
     <title>CSS - Inicio de sesión</title>
 </head>
 
+        <!-- //Navbar de opciones de paciente-->
+        <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
+
 <body>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->

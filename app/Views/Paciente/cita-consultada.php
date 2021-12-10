@@ -1,3 +1,6 @@
+    <!-- //Navbar de opciones de paciente-->
+    <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
+
 <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

@@ -1,4 +1,5 @@
-
+    <!-- //Navbar de opciones de paciente-->
+    <?php require_once ('navbar-paciente.php') ?>
 <!-- Sección de inicio -->
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">

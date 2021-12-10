@@ -1,3 +1,6 @@
+<!-- //Navbar de opciones de paciente-->
+<?php require_once ('Views/Layouts/navbar-paciente.php') ?>
+
 
 <!-- //  Breadcrumb -->
     <nav aria-label="breadcrumb">

@@ -9,8 +9,6 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="?controller=Paciente&action=cita_nueva">Cita nueva</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="?controller=Paciente&action=cita_control">Cita de control</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

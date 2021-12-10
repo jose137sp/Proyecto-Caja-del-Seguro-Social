@@ -8,7 +8,10 @@
                         Programar Cita Médica
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="?controller=Paciente&action=cita_nueva">Cita nueva</a>
+                        <a class="dropdown-item" href="?controller=Paciente&action=registrarse">Paciente Nuevo</a>
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="?controller=Paciente&action=cita_nueva">Paciente Registrado</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

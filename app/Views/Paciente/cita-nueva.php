@@ -18,22 +18,10 @@
 
     <!-- Contenido de la sección -->
 
-    <!-- Ir a registrar paciente nuevo-->
-    <div class="container-fluid">
-        <h3>Solicitar Cita Nueva</h3><br>
-        <p>¿Has solicitado una cita anteriormente?</p>
-        <div>
-            <a class="a" href="?controller=Paciente&action=registrarse" style="color: #005C8F; font-weight: bold;">No, registrar
-                datos por primera vez</a>
-            <br>
-            <hr>
-        </div>
-
-
     <!-- Formulario cita nueva -->
         <div class="container-fluid">
             <form action="?controller=Paciente&&action=cita_nueva_solicitada" method="POST">
-                <p style="font-weight: lighter;">Sí, ya he solicitado citas anteriormente</p>
+                <p style="font-weight: lighter;">Datos de solicitud</p>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Número de Cédula</label>

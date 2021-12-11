@@ -1,20 +1,8 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="Medico/medico-login.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>CSS - Inicio de sesión</title>
 </head>
-
         <!-- //Navbar de opciones de paciente-->
         <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
-
 <body>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
@@ -341,5 +329,3 @@
         </div>
     </section>
 </body>
-
-</html>

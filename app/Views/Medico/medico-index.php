@@ -1,11 +1,5 @@
 <?php require_once('navbar-medico.php')?> 
     
-    <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Inicio</li>
-        </ol>
-    </nav>
 
 <!-- Sección de inicio -->
 <section class="py-5">
@@ -14,13 +8,14 @@
                 <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTVtP_6GN-WaqD0hTfkjAr3lBFhFe_Im527A&usqp=CAU"
                         alt="..." /></div>
                 <div class="col-md-6">
-                    <h1 class="display-4 fw-bolder">Prioriza tu salud.</h1>
+                    <h1 class="display-4 fw-bolder">Sitio para Médicos.</h1>
                     <hr>
-                    <p class="lead" style="color: #0053a3;">La Caja de Seguro Social es el órgano encargado ser primero
-                        en velar por la salud de los ciudadanos panameños. Una organización fundada para brindar la
-                        atención de mayor calidad, siendo una entidad transparente y al servicio de nuestro país. Al día
-                        de hoy, contamos con la capacidad de poder brindar un espacio en línea para realizar todos los
-                        trámites necesarios para obtener tu cita, desde nuestro sitio web.</p>
+                    <p class="lead" style="color: #0053a3;">Bienvenido a la vista del sitio web para el personal médico
+                        de la Caja de Seguro Social, en esta sección encontrarás las opciones necesarias para poder
+                        gestionar los trámites e información sobre los pacientes o citas de la entidad de salud más
+                        grande y significativa de Panamá. Dentro de las opciones posibles para tramitar encuentros con
+                        los pacientes está el poder agendar citas, reprogramarlas, cancelarlas y consultar los
+                        itinerarios diarios para organizar su agenda.</p>
                 </div>
             </div>
         </div>

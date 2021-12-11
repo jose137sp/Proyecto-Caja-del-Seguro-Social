@@ -8,9 +8,11 @@
                         Gestión de citas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="?controller=Medico&action=cita_control">Agendar cita de control</a>
+                        <a class="dropdown-item" href="?controller=Medico&&action=cita_medica">Agendar Cita</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="medico-consultar-estado.html">Gestionar cita agendada</a>
+                        <a class="dropdown-item" href="?controller=Medico&&action=cancelar_cita_medico">Cancelar Cita</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?controller=Medico&&action=reprogramar_cita">Reprogramar Cita</a>
                     </div>
                 </li>
                 <li class="nav-item">

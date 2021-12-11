@@ -5,6 +5,8 @@
 
 <body>
     
+    <!-- //Navbar de opciones de paciente-->
+    <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
@@ -14,7 +16,7 @@
             <li class="breadcrumb-item active" aria-current="page">Cita de Control</li>
         </ol>
     </nav>
-
+    
     <!-- Contenido de la sección -->
     <div class="container-fluid">
 
@@ -36,7 +38,7 @@
                 <input type="number" class="form-control" id="validationDefault01"
                     placeholder="Ingrese su número de cita" required>
             </div>
-            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>
+            <button type="submit" class="btn" style="background-color: #0053a3; color: white;">Verificar</button>
         </form>
 
     </div>

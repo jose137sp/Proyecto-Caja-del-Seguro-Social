@@ -6,37 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <!-- Este código es para esconder las flechas en los input de tipo number. -->
-    <style>
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-    </style>
-    <title>Cita Nueva - Confirmación</title>
+    <title>CSS - Inicio</title>
 </head>
 
 <body>
     <!-- //Navbar de logo -->
-    <nav class="navbar navbar-dark" style="background-color: #005C8F;">
+    <nav class="navbar navbar-dark" style="background-color: #0053a3;">
         <a class="navbar-brand" href="index.html">
-            <img src="Imagenes/logo.png" width="100%" height="50" alt="" class="img-thumbnail" style="background-color: #005C8F; border: #005C8F;">
+            <img src="Imagenes/logo.png" width="100%" height="50" alt="" class="img-thumbnail"
+                style="background-color: #0053a3; border: #0053a3;">
         </a>
     </nav>
     <!-- //Navbar de opciones -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
-        <div class="navbar py-lg-0" id="navbarSupportedContent" style="padding-left: 0;">
-            <ul class="navbar-nav mr-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; width: 100%;">
+        <div class="navbar py-lg-0" id="navbarSupportedContent" style="padding-left: 0; width: 100%;">
+            <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,37 +48,41 @@
                 </li>
             </ul>
         </div>
+        <div class="navbar py-lg-0" id="navbarSupportedContent"
+            style="padding-left: 0; justify-content: left; white-space: nowrap;">
+            <ul class="navbar-nav mr-auto" style="width: 100%;">
+                <li class="nav-item">
+                    <a class="nav-link" href="medico-login.html">Sitio para médicos</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-            <li class="breadcrumb-item">Programar Cita Médica</li>
-            <li class="breadcrumb-item"><a href="cita-nueva.html">Cita Nueva</a></li>
-            <li class="breadcrumb-item"><a href="cita-nueva-datos.html">Datos de la cita</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Cita agendada</li>
+            <li class="breadcrumb-item active" aria-current="page">Inicio</li>
         </ol>
     </nav>
 
-    <!-- Contenido de la sección -->
-    <div class="container-fluid">
-        <div class="jumbotron text-center">
-            <h4 class="display-4">Su cita ha sido agendada.</h4>
-            <p class="lead"><strong>Fecha: </strong>00/00/0000</p>
-            <p class="lead"><strong>Policlínica: </strong>xxxxxxxxx</p>
-            <p class="lead"><strong>Numéro de cita: </strong>xxxxxxxxx</p>
-            <hr>
-            <p>
-                ¿Tienes problemas? <a href="">Contáctanos</a>
-            </p>
-            <p class="lead">
-                <a class="btn" href="index.html" role="button" style="background-color: #005C8F; color: white;">Menú principal</a>
-            </p>
+    <!-- Sección de inicio -->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="Imagenes/policlinica-inicio.jpeg"
+                        alt="..." /></div>
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bolder">Prioriza tu salud.</h1>
+                    <hr>
+                    <p class="lead" style="color: #0053a3;">La Caja de Seguro Social es el órgano encargado ser primero
+                        en velar por la salud de los ciudadanos panameños. Una organización fundada para brindar la
+                        atención de mayor calidad, siendo una entidad transparente y al servicio de nuestro país. Al día
+                        de hoy, contamos con la capacidad de poder brindar un espacio en línea para realizar todos los
+                        trámites necesarios para obtener tu cita, desde nuestro sitio web.</p>
+                </div>
+            </div>
         </div>
-    </div>
-
-
+    </section>
 
     <!-- //Scripts Boostrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"

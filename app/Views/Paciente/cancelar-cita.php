@@ -1,5 +1,5 @@
 <head>
-    <title>Consultar estado de cita</title>
+    <title>Cancelar Cita</title>
 </head>
     <!-- //Navbar de opciones de paciente-->
     <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
@@ -9,15 +9,15 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="?controller=Paciente&action=index">Inicio</a></li>
             <li class="breadcrumb-item">Citas programadas</li>
-            <li class="breadcrumb-item active" aria-current="page">Consultar estado de cita</li>
+            <li class="breadcrumb-item active" aria-current="page">Cancelar</li>
         </ol>
     </nav>
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
 
-        <form action="?controller=Paciente&&action=cita_consultada" method="POST">
-            <h3>Consultar estado de cita</h3><br>
+        <form action="?controller=Paciente&&action=cita_cancelada" method="POST">
+            <h3>Cancelar Cita Médica</h3><br>
             <div class="form-group">
                 <label>Número de Cédula</label>
                 <input type="text" class="form-control" id="cedula" name="cedula"
@@ -34,7 +34,14 @@
                 <input type="number" class="form-control" id="numero_cita" name="numero_cita"
                     placeholder="Ingrese su número de cita" required>
             </div>
-            <button type="submit" name="verificar" value="verificar" class="btn" style="background-color: #0053a3; color: white;">Verificar</button>
+            <hr>
+            <div class="form-group">
+                <label style="color: #DC143C;">Escribe "Cancelar" y presiona el botón para confirmar esta acción.</label>
+                <input type="text" class="form-control" id="cedula" name="verificador"
+                    placeholder="" required>
+            </div>
+            <p style="color: #ff7300;">⚠ ATENCIÓN, Esta acción no se puede revertir.</p>
+            <button type="submit" name="verificar" value="verificar" class="btn" style="background-color: #DC143C; color: white;">Cancelar</button>
         </form>
 
     </div>

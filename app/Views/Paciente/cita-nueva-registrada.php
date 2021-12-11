@@ -1,11 +1,13 @@
-    <?php require_once('navbar-medico.php')?>    <!-- //Navbar de opciones -->
-    
+    <!-- //Navbar de opciones de paciente-->
+    <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
+
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="?controller=Medico&&action=index">Inicio</a></li>
-            <li class="breadcrumb-item">Gestion de Citas</li>
-            <li class="breadcrumb-item"><a href="?controller=Medico&&action=cita_control">Agendar Cita</a></li>
+            <li class="breadcrumb-item"><a href="?controller=Paciente&&action=index">Inicio</a></li>
+            <li class="breadcrumb-item">Programar Cita Médica</li>
+            <li class="breadcrumb-item">Cita Nueva</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cita agendada</li>
         </ol>
     </nav>
 
@@ -25,10 +27,10 @@
         </tbody> 
             <hr>
             <p>
-                ¿Tienes problemas? <a href="?controller=Medico&&action=ayuda">Contáctanos</a>
+                ¿Tienes problemas? <a href="?controller=Paciente&&action=">Contáctanos</a>
             </p>
             <p class="lead">
-                <a class="btn" href="?controller=Medico&&action=index" role="button" style="background-color: #0053a3; color: white;">Menú principal</a>
+                <a class="btn" href="?controller=Paciente&&action=index" role="button" style="background-color: #0053a3; color: white;">Menú principal</a>
             </p>
         </div>
     </div>

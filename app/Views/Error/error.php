@@ -4,6 +4,8 @@
 
 <body>
 
+    <!-- //Navbar de opciones de paciente-->
+    <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
@@ -19,12 +21,9 @@
         <div class="jumbotron text-center">
             <h4 class="display-4">¡Algo salió mal!</h4>
             <br>
-            <p class="lead">Puede que sus datos sean incorrectos</p>
-            <p class="lead"><strong>Verifique </strong>xxxxxxxxx</p>
-            <p class="lead"><strong>texto </strong>xxxxxxxxx</p>
             <br>
             <p class="lead">
-                <a class="btn" href="?controller=Paciente&&action=registrarse" role="button" style="background-color: #005C8F; color: white;">Regresar</a>
+                <a class="btn" href="?controller=Paciente&&action=registrarse" role="button" style="background-color: #0053a3; color: white;">Regresar</a>
             </p>
             <br><br>
             <hr>

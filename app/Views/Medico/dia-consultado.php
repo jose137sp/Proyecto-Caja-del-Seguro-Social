@@ -5,6 +5,8 @@
 
 <body>
 
+    <!-- //Navbar de opciones de paciente-->
+    <?php require_once ('Views/Medico/navbar-medico.php') ?>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
@@ -18,14 +20,22 @@
     <!-- Contenido de la sección -->
     <div class="container-fluid">
         <div class="jumbotron text-center">
-            <h4 class="display-4">¡Datos registrados correctamente!</h4>
+            <h4 class="display-4">Citas agendadas</h4>
             <br>
+            <tbody>
+            <?php 
+            foreach($datos as $fecha){?>
+                <td><?php echo $fechas["numero_cita"] ?></td>
+                <td><?php echo $fechas["id_policlinica"] ?></td>
+                <td><?php echo $fechas["fecha_cita"] ?></td>
+                <td><?php echo $datos["estado"] ?></td>
+            <?php }
+            ?>
+            </tbody>    
             <p class="lead">Ahora podrá solicitar una cita médica</p>
-            <p class="lead"><strong>Nombre: </strong>xxxxxxxxx</p>
-            <p class="lead"><strong>Cedula: </strong>xxxxxxxxx</p>
             <br>
             <p class="lead">
-                <a class="btn" href="?controller=Paciente&&action=cita_nueva" role="button" style="background-color: #005C8F; color: white;">Solicitar cita médica</a>
+                <a class="btn" href="?controller=Medico&&action=index" role="button" style="background-color: #0053a3; color: white;">Menú Principal</a>
             </p>
             <br><br>
             <hr>

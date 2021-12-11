@@ -6,15 +6,15 @@
 </head>
 
     <!-- //Navbar de opciones de paciente-->
-    <?php require_once ('Views/Layouts/navbar-paciente.php') ?>
+    <?php require_once ('navbar-medico.php') ?>
 
 <body>
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="?controller=Paciente&action=index">Inicio</a></li>
-            <li class="breadcrumb-item">Programar Cita Médica</li>
-            <li class="breadcrumb-item active" aria-current="page">Cita Nueva</li>
+            <li class="breadcrumb-item"><a href="?controller=Medico&action=index">Inicio</a></li>
+            <li class="breadcrumb-item">Gestión de Citas</li>
+            <li class="breadcrumb-item active" aria-current="page">Agendar Cita</li>
         </ol>
     </nav>
 
@@ -22,7 +22,7 @@
 
     <!-- Formulario cita nueva -->
         <div class="container-fluid">
-            <form action="?controller=Paciente&&action=cita_nueva_solicitada" method="POST">
+            <form action="?controller=Medico&&action=info_cita_medica" method="POST">
                 <h3>Solicitud de cita médica</h3>
                 <br>
                 <div class="form-row">

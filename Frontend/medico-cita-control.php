@@ -33,7 +33,7 @@
                 <input type="number" class="form-control" id="validationDefault01"
                     placeholder="Número de cita" required>
             </div>
-            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>
+            <button type="submit" class="btn" style="background-color: #0053a3; color: white;">Verificar</button>
         </form>
 
 

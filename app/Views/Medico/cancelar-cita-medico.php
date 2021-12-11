@@ -2,7 +2,7 @@
     <title>Cancelar Cita</title>
 </head>
     <!-- //Navbar de opciones de paciente-->
-    <?php require_once ('Views/Layouts/navbar-medioc.php') ?>
+    <?php require_once ('Views/Medico/navbar-medico.php') ?>
 
     <!-- // El breadcrumb cambia en cda página. OJO CON ESTO. -->
     <nav aria-label="breadcrumb">

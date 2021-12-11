@@ -4,19 +4,25 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="?controller=Medico&&action=index">Inicio</a></li>
-            <li class="breadcrumb-item">Programar Cita Médica</li>
-            <li class="breadcrumb-item"><a href="?controller=Medico&&action=cita_control">Cita de Control</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Datos de la cita agendada</li>
+            <li class="breadcrumb-item">Gestion de Citas</li>
+            <li class="breadcrumb-item"><a href="?controller=Medico&&action=cita_control">Agendar Cita</a></li>
         </ol>
     </nav>
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
         <div class="jumbotron text-center">
-            <h4 class="display-4">Su cita ha sido agendada.</h4>
-            <p class="lead"><strong>Fecha: </strong>00/00/0000</p>
-            <p class="lead"><strong>Policlínica: </strong>xxxxxxxxx</p>
-            <p class="lead"><strong>Numéro de cita: </strong>xxxxxxxxx</p>
+        <tbody>
+        <h4 class="display-4">¡Cita Agendada!</h4><br>
+            <?php 
+            {?>
+                <tr>
+                    <h5 class="diplay-5">Numero de cita: <?php echo $num["numero_cita"] ?></h5><br>
+                    <h5 class="display-5">Fecha: <?php echo $fec["fecha_cita"] ?></h5><br>
+                </tr>
+            <?php }
+            ?>
+        </tbody> 
             <hr>
             <p>
                 ¿Tienes problemas? <a href="?controller=Medico&&action=ayuda">Contáctanos</a>

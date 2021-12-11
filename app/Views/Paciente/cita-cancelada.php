@@ -14,10 +14,15 @@
     <!-- Contenido de la sección -->
     <div class="container-fluid">
         <div class="jumbotron text-center">
-            <h4 class="display-4">Usted ha cancelado su cita</h4>
+            <h4 class="display-4">Cita Cancelada Correctamente</h4>
+            <br>
+
+            <p>
+                ¿Tienes problemas? <a href="?controller=Paciente&&action=ayuda">Contáctanos</a>
+            </p>
             <br>
             <a class="btn" href="?controller=Paciente&&action=index" role="button"
-                style="background-color: #005C8F; color: white;">Menú Principal</a>
-
+                style="background-color: #0053a3; color: white;">Menú Principal</a>
+            <br><br><br>
         </div>
     </div>

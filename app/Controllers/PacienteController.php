@@ -200,6 +200,16 @@ class PacienteController
                 break;
 
             case "cancelar":
+
+                $paciente= new PacienteModel();
+                $datos_correctos = $paciente->verificarDatosCita($cedula, $fechanac, $numero_cita);
+                    if($datos_correctos){
+                        $paciente= new PacienteModel();
+                        $datos_correctos = $paciente->cancelarCita($numero_cita);
+                        require_once('Views/Paciente/cita-cancelada.php');
+                    } else{
+                        include_once('Views/Error/error-datos-incorrectos.php');
+                    }
                 
                 break;
 

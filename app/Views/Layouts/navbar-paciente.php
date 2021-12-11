@@ -33,7 +33,7 @@
             style="padding-left: 0; justify-content: left; white-space: nowrap;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item">
-                        <a class="btn btn-outline-dark" href="?controller=Paciente&action=index">Sitio para pacientes</a>
+                        <a class="btn text-light bg-dark" href="?controller=Paciente&action=index">Sitio para pacientes</a>
                     </li>
                 </ul>
             </div>

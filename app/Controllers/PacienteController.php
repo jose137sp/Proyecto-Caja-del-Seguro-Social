@@ -163,7 +163,7 @@ class PacienteController
                 include_once('Views/Paciente/cita-consultada.php');
 
             } else {
-                echo "No Existe";
+                require_once('Views/Error/paciente-noexiste.php');
             }
         }
 

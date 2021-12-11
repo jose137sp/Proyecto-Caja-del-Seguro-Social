@@ -16,7 +16,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Consultar Itinerario</a>
+                    <a class="nav-link" href="?controller=Medico&&action=itinerario">Consultar Itinerario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?controller=Medico&&action=ayuda">Ayuda</a>

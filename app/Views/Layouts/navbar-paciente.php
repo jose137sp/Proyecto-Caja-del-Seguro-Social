@@ -20,6 +20,8 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="?controller=Paciente&action=consultar_cita">Consultar estado de cita</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?controller=Paciente&action=cancelar">Cancelar Cita</a>
                     </div>
                 </li>
                 <li class="nav-item">

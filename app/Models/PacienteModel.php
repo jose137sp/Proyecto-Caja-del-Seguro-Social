@@ -103,12 +103,13 @@ class PacienteModel
 
     public function verificarDatosCita($cedula, $fechanac, $numero_cita){
 
-        $consulta = $this->db->query("SELECT count(*) as contador from citas where cedula = '" . $cedula . "' and fechanac = '" . $fechanac . "' and numero_cita = '" . $numero_cita . "'; " );
-        //$existe_cita = $consulta->fetch_assoc();
-        //$consulta2 = $this->db->query("SELECT count(*) as contador2 from paciente where cedula = '" . $cedula . "' and fechanac = '" . $fechanac . "'; " );
-        //$existe_paciente = $consulta2->fetch_assoc();
-        $existe = $consulta->fetch_assoc();
-        if (($existe['contador'] > 0)) {
+    //Puntero que permiten verificar la existencia de información en la BDD
+        $consulta = $this->db->query("SELECT count(*) as contador from citas where cedula_paciente = '" . $cedula . "' and numero_cita = '" . $numero_cita . "';"  );
+        $consulta2 = $this->db->query("SELECT count(*) as contador2 from paciente where cedula = '" . $cedula . "' and fechanac = '" . $fechanac . "';"  );
+        //Puntero que permiten verificar la existencia de información en la BDD
+        $existe_cita = $consulta->fetch_assoc();
+        $existe_paciente = $consulta2->fetch_assoc();
+        if (($existe_cita['contador'] > 0)&&($existe_paciente['contador2'] > 0)) {
             return true;
         } else {
             return false;
@@ -135,6 +136,11 @@ class PacienteModel
     public function obtenerPaciente($cedula)
     {
         $consulta = $this->db->query("SELECT * FROM paciente WHERE cedula = '" . $cedula . "';");
+        return $consulta;
+    }
+
+    public function cancelarCita($numero_cita){
+        $consulta = $this->db->query("UPDATE `citas` SET `estado` = 'Cancelada' WHERE `citas`.`numero_cita` = $numero_cita");
         return $consulta;
     }
 

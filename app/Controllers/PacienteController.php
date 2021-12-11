@@ -85,7 +85,7 @@ class PacienteController
     }
 
     public function error(){
-        require_once('Views/Paciente/error.php');
+        require_once('Views/Error/error.php');
     }
 
     public function cita_nueva(){
@@ -147,10 +147,21 @@ class PacienteController
 
         //Si los campos no están vacíos, verifica su existencia
         if(!empty($cedula) && !empty($fechanac) && !empty($numero_cita)){
+
             $paciente= new PacienteModel();
             $existe_cita = $paciente->verificarDatosCita($cedula, $fechanac, $numero_cita);
+
             if($existe_cita){
-                echo "Existe";
+
+                $num_cita = $this->db->query("SELECT numero_cita FROM citas WHERE numero_cita = $numero_cita");
+                $num= mysqli_fetch_array($num_cita);
+                $fecha = $this->db->query("SELECT fecha_cita FROM citas WHERE numero_cita = $numero_cita");
+                $fec= mysqli_fetch_array($fecha);
+                $estado = $this->db->query("SELECT estado FROM citas WHERE numero_cita = $numero_cita");
+                $est= mysqli_fetch_array($estado);
+
+                include_once('Views/Paciente/cita-consultada.php');
+
             } else {
                 echo "No Existe";
             }
@@ -160,6 +171,42 @@ class PacienteController
 
     public function ayuda(){
         require_once('Views/Layouts/ayuda.php');
+    }
+
+    public function cancelar(){
+        require_once('Views/Paciente/cancelar-cita.php');
+    }
+
+    public function cita_cancelada(){
+
+        $cedula=$_POST['cedula'];
+        $fechanac=$_POST['fechanac'];
+        $numero_cita=$_POST['numero_cita'];
+        $verificador=$_POST['verificador'];
+
+        switch ($verificador){
+
+            case "Cancelar":
+
+                $paciente= new PacienteModel();
+                $datos_correctos = $paciente->verificarDatosCita($cedula, $fechanac, $numero_cita);
+                    if($datos_correctos){
+                        $paciente= new PacienteModel();
+                        $datos_correctos = $paciente->cancelarCita($numero_cita);
+                        require_once('Views/Paciente/cita-cancelada.php');
+                    } else{
+                        include_once('Views/Error/error-datos-incorrectos.php');
+                    }
+                break;
+
+            case "cancelar":
+                
+                break;
+
+            default:
+            include_once('Views/Error/error-cancelar.php');
+        }
+
     }
 
 }

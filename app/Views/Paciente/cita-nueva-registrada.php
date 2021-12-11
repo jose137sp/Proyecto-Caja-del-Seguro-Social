@@ -24,7 +24,7 @@
                 </tr>
             <?php }
             ?>
-            </tbody> 
+        </tbody> 
             <hr>
             <p>
                 ¿Tienes problemas? <a href="?controller=Paciente&&action=">Contáctanos</a>

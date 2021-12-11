@@ -52,7 +52,7 @@
                         placeholder="Calle, barrio, número de residencia">
                 </div>
                 <p style="color: #ff7300;">⚠ Verifica que tu información esté totalmente correcta</p>
-                <button type="submit" class="btn" name="submit" value="Insertar" style="background-color: #005C8F; color: white;">Finalizar Registro</button>
+                <button type="submit" class="btn" name="submit" value="Insertar" style="background-color: #0053a3; color: white;">Finalizar Registro</button>
             </form>
 
     </div>

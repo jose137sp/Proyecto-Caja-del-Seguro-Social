@@ -1,5 +1,5 @@
     <!-- //Navbar de opciones del médico-->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; width: 100%;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white; width: 100%; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
         <div class="navbar py-lg-0" id="navbarSupportedContent" style="padding-left: 0; width: 100%;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item dropdown">

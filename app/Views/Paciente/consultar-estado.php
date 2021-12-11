@@ -34,7 +34,7 @@
                 <input type="number" class="form-control" id="numero_cita" name="numero_cita"
                     placeholder="Ingrese su número de cita" required>
             </div>
-            <button type="submit" name="verificar" value="verificar" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>
+            <button type="submit" name="verificar" value="verificar" class="btn" style="background-color: #0053a3; color: white;">Verificar</button>
         </form>
 
     </div>

@@ -37,7 +37,7 @@
             <p class="lead">Ahora podrá solicitar una cita médica</p>
             <br>
             <p class="lead">
-                <a class="btn" href="?controller=Paciente&&action=cita_nueva" role="button" style="background-color: #005C8F; color: white;">Solicitar cita médica</a>
+                <a class="btn" href="?controller=Paciente&&action=cita_nueva" role="button" style="background-color: #0053a3; color: white;">Solicitar cita médica</a>
             </p>
             <br><br>
             <hr>

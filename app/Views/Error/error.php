@@ -23,7 +23,7 @@
             <br>
             <br>
             <p class="lead">
-                <a class="btn" href="?controller=Paciente&&action=registrarse" role="button" style="background-color: #005C8F; color: white;">Regresar</a>
+                <a class="btn" href="?controller=Paciente&&action=registrarse" role="button" style="background-color: #0053a3; color: white;">Regresar</a>
             </p>
             <br><br>
             <hr>

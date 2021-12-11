@@ -33,7 +33,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                         placeholder="150 caracteres max." required></textarea>
                 </div>
-                <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Enviar</button>
+                <button type="submit" class="btn" style="background-color: #0053a3; color: white;">Enviar</button>
                 <hr>
             </form>
     </div>

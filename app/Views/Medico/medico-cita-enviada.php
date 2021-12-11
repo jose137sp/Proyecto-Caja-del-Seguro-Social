@@ -22,7 +22,7 @@
                 ¿Tienes problemas? <a href="?controller=Medico&&action=ayuda">Contáctanos</a>
             </p>
             <p class="lead">
-                <a class="btn" href="?controller=Medico&&action=index" role="button" style="background-color: #005C8F; color: white;">Menú principal</a>
+                <a class="btn" href="?controller=Medico&&action=index" role="button" style="background-color: #0053a3; color: white;">Menú principal</a>
             </p>
         </div>
     </div>

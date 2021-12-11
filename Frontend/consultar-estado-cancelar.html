@@ -23,7 +23,7 @@
             -moz-appearance: textfield;
         }
     </style>
-    <title>Cita cancelada</title>
+    <title>Cancelar cita</title>
 </head>
 
 <body>
@@ -70,24 +70,24 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
             <li class="breadcrumb-item">Citas programadas</li>
-            <li class="breadcrumb-item">Consultar estado de cita</li>
-            <li class="breadcrumb-item">Datos de la cita</li>
-            <li class="breadcrumb-item">Cancelar cita</li>
-            <li class="breadcrumb-item active" aria-current="page">Cita cancelada</li>
+            <li class="breadcrumb-item"><a href="consultar-estado.html">Consultar estado de cita</a></li>
+            <li class="breadcrumb-item"><a href="consultar-estado-confirmacion.html">Datos de la cita</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cancelar cita</li>
         </ol>
     </nav>
 
     <!-- Contenido de la sección -->
     <div class="container-fluid">
         <div class="jumbotron text-center">
-            <h4 class="display-4">Su cita ha sido cancelada.</h4>
+            <h4 class="display-4">Cancelar cita</h4>
+            <p class="lead"><strong>¿Está seguro que desea cancelar la cita?</strong></p>
+            <p class="lead"><strong>Numéro de cita: </strong>xxxxxxxxx</p>
+            <p style="color: #ff7300;">⚠ Esta acción no se puede revertir</p>
             <hr>
-            <p>
-                ¿Tienes problemas? <a href="">Contáctanos</a>
-            </p>
-            <p class="lead">
-                <a class="btn" href="index.html" role="button" style="background-color: #0053a3; color: white;">Menú principal</a>
-            </p>
+            <a class="a" href="consultar-estado-cancelar-confirmado.html" style="color: #eb0000; font-weight: bold;">Cancelar cita</a>
+            <br><br>
+            <a class="btn" href="consultar-estado-confirmacion.html" role="button"
+                style="background-color: #0053a3; color: white;">Retroceder</a>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
     <!-- //Navbar de opciones -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white; width: 100%; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
         <div class="navbar py-lg-0" id="navbarSupportedContent" style="padding-left: 0; width: 100%;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item dropdown">
@@ -33,16 +33,17 @@
             style="padding-left: 0; justify-content: left; white-space: nowrap;">
             <ul class="navbar-nav mr-auto" style="width: 100%;">
                 <li class="nav-item">
-                    <a class="nav-link" href="?controller=Paciente&action=index">Sitio para pacientes</a>
-                </li>
-            </ul>
-        </div>
-        <div class="navbar py-lg-0" id="navbarSupportedContent"
-            style="padding-left: 0; justify-content: left; white-space: nowrap;">
-            <ul class="navbar-nav mr-auto" style="width: 100%;">
-                <li class="nav-item">
-                    <a class="nav-link" href="?controller=Medico&action=login">Sitio para médicos</a>
-                </li>
-            </ul>
+                        <a class="btn btn-outline-dark" href="?controller=Paciente&action=index">Sitio para pacientes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar py-lg-0" id="navbarSupportedContent"
+                style="padding-left: 0; justify-content: left; white-space: nowrap;">
+                <ul class="navbar-nav mr-auto" style="width: 100%;">
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark" href="?controller=Medico&action=login">Sitio para médicos</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>

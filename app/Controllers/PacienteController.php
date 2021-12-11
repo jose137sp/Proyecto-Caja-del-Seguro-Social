@@ -8,10 +8,11 @@ require_once('Models/MedicoModel.php');
 
 class PacienteController
 {   
+    private $db;
 
     function __construct()
     {
-        
+        $this->db = Conexion::conectar();
     }
 
     function index()
@@ -111,7 +112,9 @@ class PacienteController
                     $cita_agendada = $paciente -> asignarCita($cedula, $email, $telefono, $policlinica, $especialidad);
 
                     if($cita_agendada){
-                        echo "registrada";
+                        $paciente=new PacienteModel();
+                        $datos = $paciente->cita();
+                        require_once('Views/Paciente/cita-nueva-registrada.php');
 
                     }  else{
                         echo "No registrada";
@@ -143,10 +146,6 @@ class PacienteController
             }
         }
 
-    }
-
-    public function cita_control(){
-        require_once('Views/Paciente/cita-control.php');
     }
 
     public function consultar_cita(){

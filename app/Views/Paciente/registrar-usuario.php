@@ -6,9 +6,8 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="?controller=Paciente&action=index">Inicio</a></li>
-            <li class="breadcrumb-item">Programar Cita Médica</li>
-            <li class="breadcrumb-item"><a href="?controller=Paciente&action=cita_nueva">Cita Nueva</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Registrar datos</li>
+            <li class="breadcrumb-item">Paciente Nuevo</li>
+            <li class="breadcrumb-item active" aria-current="page">Registro de información personal</li>
         </ol>
     </nav>
 

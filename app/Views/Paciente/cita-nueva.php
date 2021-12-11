@@ -23,7 +23,8 @@
     <!-- Formulario cita nueva -->
         <div class="container-fluid">
             <form action="?controller=Paciente&&action=cita_nueva_solicitada" method="POST">
-                <h3>Datos de la cita nueva</h3><br>
+                <h3>Solicitud de cita médica</h3>
+                <br>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Número de Cédula</label>

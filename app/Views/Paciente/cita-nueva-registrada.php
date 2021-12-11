@@ -14,10 +14,17 @@
     <!-- Contenido de la sección -->
     <div class="container-fluid">
         <div class="jumbotron text-center">
-            <h4 class="display-4">Su cita ha sido agendada.</h4>
-            <p class="lead"><strong>Fecha: </strong>00/00/0000</p>
-            <p class="lead"><strong>Policlínica: </strong>xxxxxxxxx</p>
-            <p class="lead"><strong>Numéro de cita: </strong>xxxxxxxxx</p>
+        <tbody>
+            <?php 
+            if ($datos){?>
+                <tr>
+                    <td>Numero de cita: <?php echo $numero_cita?></td><br>
+                    <td>Fecha: <?php echo $fecha?></td><br>
+                    <td>Policlinica: <?php echo $estado?></td><br>
+                </tr>
+            <?php }
+            ?>
+            </tbody> 
             <hr>
             <p>
                 ¿Tienes problemas? <a href="?controller=Paciente&&action=">Contáctanos</a>

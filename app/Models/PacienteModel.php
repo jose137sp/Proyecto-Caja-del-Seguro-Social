@@ -50,15 +50,55 @@ class PacienteModel
         }
     }
 
+    //funcion que permite asignar una cita a un paciente
     public function asignarCita($cedula, $email, $telefono, $policlinica, $especialidad){
-        $consulta = $this->db->query("INSERT INTO prueba (cedula, email, telefono, policlinica, especialidad)
-            VALUES ('" . $cedula . "','" . $email . "','" .$telefono . "','" . $policlinica . "','" . $especialidad . "');");
+
+        $estado="Por asistir";
+        $fecha_actual = date("Y-m-d");  //Obtiene la fecha actual en la que se está solicitando la cita médica
+        $dias = random_int(7, 28);
+
+        switch($especialidad){
+            case 1:
+                $id_medico=1;
+                break;
+
+            case 2:
+                $id_medico=2;
+                break;
+
+            case 3:
+                $id_medico=3;
+                break;
+
+            case 4:
+                $id_medico=4;
+
+                break;
+            case 5:
+                $id_medico=5;
+                break;
+
+            default:
+                break;
+        } 
+
+        $fecha_cita = date("Y-m-d", strtotime($fecha_actual. "+ ".$dias." days"));
+        $consulta = $this->db->query("INSERT INTO citas (fecha_cita, estado, id_especialidad, id_policlinica, cedula_paciente, id_medico)
+            VALUES ('" . $fecha_cita . "','" . $estado.  "','" . $especialidad.  "','" . $policlinica.  "','" . $cedula.  "','" . $id_medico. "');");
+
+        $consulta = $this->db->query("INSERT INTO contacto (cedula_paciente, telefono, email)
+            VALUES ('" . $cedula . "','" . $telefono . "','" . $email. "');");
+
+        $consulta = $this->db->query("INSERT INTO registro_citas (id_medico, fecha_cita)
+            VALUES ('" . $id_medico . "','" . $fecha_cita. "');");
+
         if ($consulta){
             return true;
         } else{
             return false;
         }
     }
+
 
     public function verificarDatosCita($cedula, $fechanac, $numero_cita){
 
@@ -77,6 +117,15 @@ class PacienteModel
         }
     }
 
+    //Funcion que permite mostrar los datos de la cita segun el numero de cita que reigstra el cliente
+    public function cita(){
+        $num_cita = $this->db->query("SELECT * FROM citas WHERE numero_cita=(SELECT MAX(id)) FROM citas");
+        $consulta = $this->db->query("SELECT * FROM citas WHERE numero_cita = '" . $num_cita . "';");
+        $num_cita = ['numero_cita'];
+        $fecha = ['fecha_cita'];
+        $estado = ['estado'];
+        return array ($num_cita, $fecha, $estado);
+    }
 
     //Esta función permite imprimir la información del paciente una vez se registra
     public function info($cedula){
@@ -90,5 +139,6 @@ class PacienteModel
         $consulta = $this->db->query("SELECT * FROM paciente WHERE cedula = '" . $cedula . "';");
         return $consulta;
     }
+
 }
     

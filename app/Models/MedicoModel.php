@@ -25,4 +25,14 @@ class MedicoModel
         }
     }
 
+
+    public function listar($fecha){
+
+        $consulta = $this->db->query("SELECT * FROM citas WHERE id_medico = 3 AND fecha_cita = $fecha");
+        while ($filas = $consulta->fetch_assoc()){
+            $medicos[] = $filas;
+        }
+        return $medicos;
+    }
+
 }

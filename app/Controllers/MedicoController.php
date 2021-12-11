@@ -5,7 +5,7 @@ require_once('Models/PacienteModel.php');
 class MedicoController
 {
     private $db;
-    private $medicos;
+    private $pacientes;
     function __construct()
     {
         $this->db = Conexion::conectar();
@@ -130,4 +130,19 @@ class MedicoController
     function ayuda(){
         require_once('Views/Medico/medico-ayuda.php');
     }
+
+    public function itinerario(){
+        require_once('Views/Medico/itinerario.php');
+
+    }
+
+    public function consultar_dia(){ 
+
+        $fecha=$_POST['fecha'];
+        $num = $this->db->query("SELECT * FROM registro_citas WHERE fecha_cita = $fecha");
+        $fechas= mysqli_fetch_array($num);
+    
+        require_once("Views/Medico/dia-consultado.php");
+    }
+
 }

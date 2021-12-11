@@ -2,6 +2,8 @@
 
 require_once('Models/MedicoModel.php');
 require_once('Models/PacienteModel.php');
+
+//Clase Controlador para médico, la cual se encargará de manejar todos los datos provenientes de la página
 class MedicoController
 {
     private $db;
@@ -12,16 +14,22 @@ class MedicoController
         $this->medicos = array();
     }
 
+
+    //Función para redireccionar al login de médico cada vez que se le de click al botón correspondiente
     function login()
     {   
         require_once('Views/Medico/medico-login.php');
     }
 
+    /**
+     * Una vez se pasa por el form action POST de login, se necesita de la función verificar para redirigir a la base de datos
+     * y consultar si existe ese paciente y si la cédula le corresponde
+     */
     public function verificar()
     {   
         $cedula=$_POST['cedula'];
         $contraseña=$_POST['contraseña'];
-        if(!empty($cedula) && !empty($contraseña)){
+        if(!empty($cedula) && !empty($contraseña)){ //De ahora en adelante toda función similar verificará que los campos no estén vacíos
             $medico= new MedicoModel();
             $existe_usuario = $medico->verificarlogin($cedula, $contraseña);
 

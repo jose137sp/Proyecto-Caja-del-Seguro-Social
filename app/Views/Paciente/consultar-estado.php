@@ -16,7 +16,7 @@
     <!-- Contenido de la sección -->
     <div class="container-fluid">
 
-        <form action="?controller=Paciente&&action=cita_consultada">
+        <form action="?controller=Paciente&&action=cita_consultada" method="POST">
             <h3>Consultar estado de cita</h3><br>
             <div class="form-group">
                 <label>Número de Cédula</label>
@@ -34,7 +34,7 @@
                 <input type="number" class="form-control" id="numero_cita" name="numero_cita"
                     placeholder="Ingrese su número de cita" required>
             </div>
-            <button type="submit" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>
+            <button type="submit" name="verificar" value="verificar" class="btn" style="background-color: #005C8F; color: white;">Verificar</button>
         </form>
 
     </div>

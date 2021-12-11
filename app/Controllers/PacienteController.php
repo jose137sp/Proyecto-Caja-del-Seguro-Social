@@ -9,10 +9,13 @@ require_once('Models/MedicoModel.php');
 class PacienteController
 {   
     private $db;
+    private $pacientes;
 
     function __construct()
     {
         $this->db = Conexion::conectar();
+        $this->pacientes = array();
+        
     }
 
     function index()
@@ -112,12 +115,14 @@ class PacienteController
                     $cita_agendada = $paciente -> asignarCita($cedula, $email, $telefono, $policlinica, $especialidad);
 
                     if($cita_agendada){
-                        $paciente=new PacienteModel();
-                        $datos = $paciente->cita();
+                        $num_cita = $this->db->query("SELECT numero_cita FROM citas WHERE numero_cita = (SELECT MAX(numero_cita) FROM citas)");
+                        $num= mysqli_fetch_array($num_cita);
+                        $fecha = $this->db->query("SELECT fecha_cita FROM citas WHERE numero_cita = (SELECT MAX(numero_cita) FROM citas)");
+                        $fec= mysqli_fetch_array($fecha);
                         require_once('Views/Paciente/cita-nueva-registrada.php');
 
                     }  else{
-                        echo "No registrada";
+                        echo "Cita no agendada, retroceda a la página anterior";
                     }
 
                 }else{
@@ -128,6 +133,10 @@ class PacienteController
             echo "campos vacíos";
         }
     } 
+
+    public function consultar_cita(){
+        require_once('Views/Paciente/consultar-estado.php');
+    }
 
     //Esta función permite saber si existe una cita en la base de datos agregada al paciente
     public function cita_consultada(){
@@ -140,16 +149,13 @@ class PacienteController
         if(!empty($cedula) && !empty($fechanac) && !empty($numero_cita)){
             $paciente= new PacienteModel();
             $existe_cita = $paciente->verificarDatosCita($cedula, $fechanac, $numero_cita);
-
             if($existe_cita){
-                
+                echo "Existe";
+            } else {
+                echo "No Existe";
             }
         }
 
-    }
-
-    public function consultar_cita(){
-        require_once('Views/Paciente/consultar-estado.php');
     }
 
     public function ayuda(){

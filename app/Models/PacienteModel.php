@@ -56,6 +56,7 @@ class PacienteModel
         $estado="Por asistir";
         $fecha_actual = date("Y-m-d");  //Obtiene la fecha actual en la que se está solicitando la cita médica
         $dias = random_int(7, 28);
+        $fecha_cita = date("Y-m-d", strtotime($fecha_actual. "+ ".$dias." days"));
 
         switch($especialidad){
             case 1:
@@ -82,7 +83,7 @@ class PacienteModel
                 break;
         } 
 
-        $fecha_cita = date("Y-m-d", strtotime($fecha_actual. "+ ".$dias." days"));
+        
         $consulta = $this->db->query("INSERT INTO citas (fecha_cita, estado, id_especialidad, id_policlinica, cedula_paciente, id_medico)
             VALUES ('" . $fecha_cita . "','" . $estado.  "','" . $especialidad.  "','" . $policlinica.  "','" . $cedula.  "','" . $id_medico. "');");
 
@@ -102,15 +103,12 @@ class PacienteModel
 
     public function verificarDatosCita($cedula, $fechanac, $numero_cita){
 
-        //Punteros que permiten verificar la existencia de información en la BDD
-        $consulta1 = $this->db->query("SELECT count(*) as contador1 from cita_paciente where cedula= '" . $cedula . "';");
-        $cedula_existe = $consulta1->fetch_assoc();
-        $consulta2 = $this->db->query("SELECT count(*) as contador2 from paciente where fechanac= '" . $fechanac . "';");
-        $fechanac_existe = $consulta2->fetch_assoc();
-        $consulta3 = $this->db->query("SELECT count(*) as contador2 from cita_paciente where fechanac= '" . $numero_cita . "';");
-        $cita_existe = $consulta3->fetch_assoc();
-
-        if ((($cedula_existe['contador1'] > 0) && ($fechanac_existe['contador2'] > 0) && ($fechanac_existe['contador2'] > 0))) {
+        $consulta = $this->db->query("SELECT count(*) as contador from citas where cedula = '" . $cedula . "' and fechanac = '" . $fechanac . "' and numero_cita = '" . $numero_cita . "'; " );
+        //$existe_cita = $consulta->fetch_assoc();
+        //$consulta2 = $this->db->query("SELECT count(*) as contador2 from paciente where cedula = '" . $cedula . "' and fechanac = '" . $fechanac . "'; " );
+        //$existe_paciente = $consulta2->fetch_assoc();
+        $existe = $consulta->fetch_assoc();
+        if (($existe['contador'] > 0)) {
             return true;
         } else {
             return false;

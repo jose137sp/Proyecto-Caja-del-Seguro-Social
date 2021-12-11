@@ -1,7 +1,7 @@
 <?php
 
 $controllers = array(
-    'Paciente'=>[ 'index', 'ayuda', 'cita_control', 'cita_nueva', 'cita_nueva_solicitada', 'cita_nueva_registrada', 'consultar_cita', 'registrarse', 'guardar', 'confirmar', 'error'],
+    'Paciente'=>[ 'index', 'ayuda', 'cita_control', 'cita_nueva', 'cita_nueva_solicitada', 'cita_nueva_registrada', 'consultar_cita', 'cita_consultada', 'registrarse', 'guardar', 'confirmar', 'error'],
     'Medico'=>['login', 'verificar', 'index', 'medico_login', 'confirmar', 'error', 'itinerario', 'datos_paciente', 'datos_cita', 'cita_enviada', 'ayuda', 'servicio']
 );
 

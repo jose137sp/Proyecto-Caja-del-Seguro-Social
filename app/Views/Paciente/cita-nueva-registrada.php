@@ -15,12 +15,12 @@
     <div class="container-fluid">
         <div class="jumbotron text-center">
         <tbody>
+        <h4 class="display-4">¡Cita Agendada!</h4><br>
             <?php 
-            if ($datos){?>
+            {?>
                 <tr>
-                    <td>Numero de cita: <?php echo $numero_cita?></td><br>
-                    <td>Fecha: <?php echo $fecha?></td><br>
-                    <td>Policlinica: <?php echo $estado?></td><br>
+                    <h5 class="diplay-5">Numero de cita: <?php echo $num["numero_cita"] ?></h5><br>
+                    <h5 class="display-5">Fecha: <?php echo $fec["fecha_cita"] ?></h5><br>
                 </tr>
             <?php }
             ?>

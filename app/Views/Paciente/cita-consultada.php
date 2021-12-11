@@ -26,7 +26,7 @@
                 ¿Tienes problemas? <a href="">Contáctanos</a>
             </p>
             <p class="lead">
-                <a class="btn" href="index.html" role="button" style="background-color: #005C8F; color: white;">Menú principal</a>
+                <a class="btn" href="index.html" role="button" style="background-color: #0053a3; color: white;">Menú principal</a>
             </p>
         </div>
     </div>

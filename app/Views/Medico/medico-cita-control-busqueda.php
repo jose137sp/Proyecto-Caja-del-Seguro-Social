@@ -22,7 +22,7 @@
             <p class="lead"><strong>Numéro de cita: </strong>xxxxxxxxx</p>
             <hr>
             <p class="lead">
-                <a class="btn" href="?controller=Medico&&action=datos_cita" role="button" style="background-color: #005C8F; color: white;">Agendar nuevo control</a>
+                <a class="btn" href="?controller=Medico&&action=datos_cita" role="button" style="background-color: #0053a3; color: white;">Agendar nuevo control</a>
             </p>
         </div>
     </div>

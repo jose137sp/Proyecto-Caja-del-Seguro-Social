@@ -22,7 +22,7 @@
             <h5 class="display-4">Usuario o contraseña incorrectos</h5>
             <br>
             <p class="lead">
-                <a class="btn" href="?controller=Medico&&action=login" role="button" style="background-color: #005C8F; color: white;">Regresar</a>
+                <a class="btn" href="?controller=Medico&&action=login" role="button" style="background-color: #0053a3; color: white;">Regresar</a>
             </p>
             <br><br>
             <hr>

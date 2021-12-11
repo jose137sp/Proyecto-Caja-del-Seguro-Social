@@ -58,6 +58,6 @@
                     </select>
                 </div>
             </div>
-            <button type="submit" name="submit" value="enviar" class="btn" style="background-color: #005C8F; color: white;">Enviar Solicitud</button>
+            <button type="submit" name="submit" value="enviar" class="btn" style="background-color: #0053a3; color: white;">Enviar Solicitud</button>
         </form>
     </div>
